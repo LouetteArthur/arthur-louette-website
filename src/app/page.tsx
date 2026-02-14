@@ -196,9 +196,9 @@ export default function Home() {
           {/* Photo — Airshow profile */}
           <div className="relative mx-auto w-32 h-32 md:w-40 md:h-40 mb-8">
             <div className="absolute inset-0 border border-accent/40 rotate-45 scale-[1.15]" aria-hidden="true" />
-            <div className="relative w-full h-full border border-accent/60 overflow-hidden border-4 border-red-500">
+            <div className="relative w-full h-full border border-accent/60 overflow-hidden">
               <Image
-                src="/images/profile.png?v=2"
+                src="/images/profile.png"
                 alt="Arthur Louette"
                 fill
                 className="object-cover object-[center_15%] rotate-180"
