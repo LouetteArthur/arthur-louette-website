@@ -84,7 +84,7 @@ const PROJECTS = [
       "Investigating multi-agent reinforcement learning for autonomous pursuit-evasion. Training adversarial policies in high-fidelity simulation to study robust behaviors and sim-to-real transfer capabilities.",
     tags: ["Multi-Agent RL", "Isaac Sim", "Quadcopter"],
     image: null as string | null,
-    video: "/videos/takeoff.mp4",
+    video: "/videos/pursuit_evasion.mp4",
     imageAlt: "Drone pursuit-evasion demonstration",
     status: "ACTIVE",
   },
@@ -94,8 +94,8 @@ const PROJECTS = [
     description:
       "Researching robust tracking and control strategies for counter-UAS applications. Focusing on reinforcement learning algorithms that can adapt to dynamic targets and uncertain environments.",
     tags: ["Control Theory", "RL", "Tracking", "Isaac Sim"],
-    image: "/images/drone-sim.webp",
-    video: null as string | null,
+    image: null as string | null,
+    video: "/images/counter_drones.mp4",
     imageAlt: "Simulation of drone tracking algorithms",
     status: "ACTIVE",
   },
@@ -105,7 +105,7 @@ const PROJECTS = [
     description:
       "Optimizing robotic sorting efficiency through learned manipulation policies. Studying the application of reinforcement learning to improve pick-and-place performance in waste management contexts.",
     tags: ["Robotics", "Sim-to-Real", "Manipulation", "Optimization"],
-    image: "/images/delta-robot.png",
+    image: "/images/delta_robot.jpeg",
     video: null as string | null,
     imageAlt: "Delta robot performing high-speed sorting",
     status: "COMPLETED",
@@ -413,7 +413,7 @@ export default function Home() {
                   />
                 </div>
                 <p className="font-mono text-[10px] text-text-dark-secondary/60 mt-2 tracking-wider text-center">
-                  NATO HQ — Brussels
+                  NSPA — Capellen
                 </p>
               </div>
             </AnimatedSection>
