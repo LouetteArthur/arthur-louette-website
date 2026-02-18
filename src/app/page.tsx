@@ -634,7 +634,7 @@ export default function Home() {
                   </div>
                   <h3 className="font-display text-xl font-bold text-text-primary">Team Spirit</h3>
                   <p className="text-text-secondary text-sm mt-2 max-w-sm">
-                    Playing football with my team is how I disconnect. Simple as that.
+                    Playing football with my team is how I disconnect.
                   </p>
                 </div>
               </div>
