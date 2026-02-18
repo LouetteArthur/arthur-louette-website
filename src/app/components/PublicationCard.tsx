@@ -47,7 +47,7 @@ export default function PublicationCard({
             const isSupervised = supervisedAuthor && author.includes(supervisedAuthor);
 
             return (
-                <span key={index} className="inline-block">
+                <span key={index} className="inline">
                     {index > 0 && ", "}
                     <span
                         className={`

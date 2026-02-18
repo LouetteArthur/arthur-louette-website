@@ -22,6 +22,7 @@ import PublicationCard from "./components/PublicationCard";
 import TimelineItem from "./components/TimelineItem";
 import SkillTag from "./components/SkillTag";
 import AnimatedSection from "./components/AnimatedSection";
+import TerminalContact from "./components/TerminalContact";
 
 /* ═══════════════════════════════════════
    DATA
@@ -80,7 +81,7 @@ const PROJECTS = [
     title: "Pursuit-Evasion Drones",
     codename: "INTERCEPTOR",
     description:
-      "Multi-agent reinforcement learning for autonomous drone pursuit-evasion scenarios. Training adversarial pursuer and evader policies in high-fidelity simulation with sim-to-real transfer to real quadrotors.",
+      "Investigating multi-agent reinforcement learning for autonomous pursuit-evasion. Training adversarial policies in high-fidelity simulation to study robust behaviors and sim-to-real transfer capabilities.",
     tags: ["Multi-Agent RL", "Isaac Sim", "Quadcopter"],
     image: null as string | null,
     video: "/videos/takeoff.mp4",
@@ -91,19 +92,19 @@ const PROJECTS = [
     title: "Counter-Drone Systems",
     codename: "SENTINEL",
     description:
-      "Developing autonomous counter-UAS defence systems using reinforcement learning. Intelligent tracking and interception of hostile drone threats using teleoperated weapon station systems.",
-    tags: ["C-UAS", "Reinforcement Learning", "Defence", "Isaac Sim"],
-    image: "/images/turret-cuas.png",
+      "Researching robust tracking and control strategies for counter-UAS applications. Focusing on reinforcement learning algorithms that can adapt to dynamic targets and uncertain environments.",
+    tags: ["Control Theory", "RL", "Tracking", "Isaac Sim"],
+    image: "/images/drone-sim.webp",
     video: null as string | null,
-    imageAlt: "Teleoperated turret system for counter-drone defence",
+    imageAlt: "Simulation of drone tracking algorithms",
     status: "ACTIVE",
   },
   {
     title: "Delta Robot Sorting",
     codename: "DELTA",
     description:
-      "High-speed robotic sorting using a delta robot controlled by reinforcement learning. Bridging the sim-to-real gap for precise, rapid pick-and-place operations at GeMMe lab.",
-    tags: ["Robotics", "Sim-to-Real", "Manipulation", "Control"],
+      "Optimizing robotic sorting efficiency through learned manipulation policies. Studying the application of reinforcement learning to improve pick-and-place performance in waste management contexts.",
+    tags: ["Robotics", "Sim-to-Real", "Manipulation", "Optimization"],
     image: "/images/delta-robot.png",
     video: null as string | null,
     imageAlt: "Delta robot performing high-speed sorting",
@@ -171,7 +172,7 @@ const NEWS = [
     location: "Paris, France",
   },
   {
-    date: "2024",
+    date: "2025",
     title: "Inno4Def Drone Hackathon",
     description:
       "Participated in the Inno4Def drone hackathon organized by La Défense. Flying drones in simulation using Liftoff and developing autonomous strategies.",
@@ -179,6 +180,7 @@ const NEWS = [
     imageAlt:
       "Arthur Louette flying drones at Inno4Def hackathon using Liftoff simulator",
     location: "Belgium",
+    youtubeUrl: "https://inno4def.be/both2/",
   },
 ];
 
@@ -231,7 +233,7 @@ export default function Home() {
                   src="/images/profile.png"
                   alt="Arthur Louette"
                   fill
-                  className="object-cover object-[center_15%]"
+                  className="object-cover object-top"
                   priority
                   sizes="160px"
                 />
@@ -600,73 +602,37 @@ export default function Home() {
       <section id="contact" className="section-light">
         <div className="section-divider-light" />
         <div className="section-container">
-          <div className="max-w-2xl mx-auto text-center">
-            <AnimatedSection>
+          <AnimatedSection>
+            <div className="max-w-2xl mx-auto text-center mb-12">
               <p className="font-mono text-[10px] text-accent tracking-[0.2em] uppercase mb-4">
                 07
               </p>
               <h2 className="font-display text-3xl md:text-4xl font-bold text-text-dark mb-6">
                 Get in Touch
               </h2>
-            </AnimatedSection>
-
-            <AnimatedSection delay={0.15}>
-              <p className="text-text-dark-secondary mb-4 leading-relaxed">
-                Interested in research collaboration, or just want to chat about
-                reinforcement learning and robotics?
+              <p className="text-text-dark-secondary leading-relaxed">
+                Initiate communication sequence.
               </p>
-              <p className="text-text-dark-secondary mb-10">
-                <span className="text-text-tertiary">Affiliation:</span>{" "}
-                Montefiore Institute, University of Liège
-                <br />
-                <span className="text-text-tertiary">Address:</span> Allée de la
-                Découverte 10 (B28), B-4000 Liège, Belgium
-              </p>
-            </AnimatedSection>
+            </div>
+          </AnimatedSection>
 
-            <AnimatedSection delay={0.3}>
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <a
-                  href="mailto:arthur.louette@uliege.be"
-                  className="inline-flex items-center gap-2 px-10 py-4 bg-accent text-bg-dark font-medium tracking-wide hover:bg-accent-hover transition-all duration-200 text-lg"
-                >
-                  <Mail size={18} />
-                  arthur.louette@uliege.be
-                </a>
-                <a
-                  href="/cv.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-10 py-4 border border-border-light text-text-dark font-medium tracking-wide hover:bg-border-light/50 transition-all duration-200 text-lg"
-                >
-                  <FileText size={18} />
-                  Download CV
-                </a>
-              </div>
-            </AnimatedSection>
+          <AnimatedSection delay={0.2}>
+            <TerminalContact />
+          </AnimatedSection>
 
-            {/* Social Links Row */}
-            <AnimatedSection delay={0.4}>
-              <div className="flex flex-wrap items-center justify-center gap-3 mt-8">
-                {SOCIAL_LINKS.filter((l) => l.label !== "Email").map((link) => {
-                  const Icon = link.icon;
-                  return (
-                    <a
-                      key={link.label}
-                      href={link.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 px-4 py-2.5 border border-border-light font-mono text-xs tracking-wider text-text-dark-secondary hover:text-accent hover:border-accent/40 transition-all duration-200"
-                    >
-                      <Icon size={14} />
-                      {link.label}
-                      <ExternalLink size={10} className="opacity-40" />
-                    </a>
-                  );
-                })}
-              </div>
-            </AnimatedSection>
-          </div>
+          <AnimatedSection delay={0.3}>
+            <div className="flex justify-center mt-10">
+              <a
+                href="/cv.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-6 py-3 border border-border-light text-text-dark font-medium tracking-wide hover:bg-border-light/50 transition-all duration-200 text-sm"
+              >
+                <FileText size={16} />
+                Download CV
+              </a>
+            </div>
+          </AnimatedSection>
         </div>
       </section>
 
