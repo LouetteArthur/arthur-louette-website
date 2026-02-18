@@ -14,6 +14,8 @@ import {
   MapPin,
   ArrowRight,
   FileText,
+  Trophy,
+  Gamepad2,
 } from "lucide-react";
 import NavBar from "./components/NavBar";
 import SectionHeader from "./components/SectionHeader";
@@ -250,7 +252,7 @@ export default function Home() {
 
           <AnimatedSection delay={0.3}>
             <p className="font-mono text-sm md:text-base text-text-secondary tracking-wide mb-8">
-              PhD Researcher · Reinforcement Learning · Robotics
+              PhD Researcher · Co-Founder @ Belerion · Robotics
             </p>
           </AnimatedSection>
 
@@ -335,7 +337,15 @@ export default function Home() {
                   <span className="text-accent">
                     Robotic Reinforcement Learning
                   </span>{" "}
-                  at the University of Liège.
+                  at ULiège & Co-founder of{" "}
+                  <a
+                    href="https://belerion.ai"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-accent hover:underline decoration-accent/30 underline-offset-4 transition-all"
+                  >
+                    Belerion
+                  </a>.
                 </p>
               </AnimatedSection>
 
@@ -598,6 +608,68 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ═══════════ 07 — HOBBIES ═══════════ */}
+      <section id="hobbies" className="section-dark">
+        <div className="section-divider" />
+        <div className="section-container">
+          <AnimatedSection>
+            <SectionHeader index="07" title="Passions" subtitle="Beyond the lab." />
+          </AnimatedSection>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            {/* Football */}
+            <AnimatedSection delay={0.1}>
+              <div className="group relative h-64 overflow-hidden border border-border-dark bg-bg-dark-card hover:border-accent/40 transition-all duration-500">
+                <Image
+                  src="/images/football.jpg"
+                  alt="Football Team"
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  style={{ filter: "saturate(0.6) brightness(0.8)" }}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-bg-dark-card/90 via-bg-dark-card/20 to-transparent" />
+                <div className="absolute bottom-0 left-0 p-6">
+                  <div className="flex items-center gap-2 mb-2 text-accent">
+                    <Trophy size={16} />
+                    <span className="font-mono text-[10px] tracking-[0.2em] uppercase">Football</span>
+                  </div>
+                  <h3 className="font-display text-xl font-bold text-text-primary">Team Spirit</h3>
+                  <p className="text-text-secondary text-sm mt-2 max-w-sm">
+                    Playing football keeps me grounded. Strategies on the field are surprisingly similar to multi-agent coordination.
+                  </p>
+                </div>
+              </div>
+            </AnimatedSection>
+
+            {/* FPV */}
+            <AnimatedSection delay={0.2}>
+              <div className="group relative h-64 overflow-hidden border border-border-dark bg-bg-dark-card hover:border-accent/40 transition-all duration-500">
+                <video
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity duration-500"
+                >
+                  <source src="/videos/takeoff.mp4" type="video/mp4" />
+                </video>
+                <div className="absolute inset-0 bg-gradient-to-t from-bg-dark-card/90 via-transparent to-transparent" />
+                <div className="absolute bottom-0 left-0 p-6">
+                  <div className="flex items-center gap-2 mb-2 text-accent">
+                    <Gamepad2 size={16} />
+                    <span className="font-mono text-[10px] tracking-[0.2em] uppercase">FPV Piloting</span>
+                  </div>
+                  <h3 className="font-display text-xl font-bold text-text-primary">Flight Control</h3>
+                  <p className="text-text-secondary text-sm mt-2 max-w-sm">
+                    Building and piloting FPV drones gives me an intuitive understanding of flight dynamics that informs my research.
+                  </p>
+                </div>
+              </div>
+            </AnimatedSection>
+          </div>
+        </div>
+      </section>
+
       {/* ═══════════ 07 — CONTACT ═══════════ */}
       <section id="contact" className="section-light">
         <div className="section-divider-light" />
@@ -605,7 +677,7 @@ export default function Home() {
           <AnimatedSection>
             <div className="max-w-2xl mx-auto text-center mb-12">
               <p className="font-mono text-[10px] text-accent tracking-[0.2em] uppercase mb-4">
-                07
+                08
               </p>
               <h2 className="font-display text-3xl md:text-4xl font-bold text-text-dark mb-6">
                 Get in Touch
