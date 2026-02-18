@@ -10,6 +10,7 @@ const NAV_ITEMS = [
     { id: "news", label: "News" },
     { id: "education", label: "Education" },
     { id: "teaching", label: "Teaching" },
+    { id: "hobbies", label: "Passions" },
     { id: "contact", label: "Contact" },
 ];
 
