@@ -11,7 +11,6 @@ const NAV_ITEMS = [
     { id: "education", label: "Education" },
     { id: "teaching", label: "Teaching" },
     { id: "hobbies", label: "Passions" },
-    { id: "contact", label: "Contact" },
 ];
 
 export default function NavBar() {
@@ -80,12 +79,12 @@ export default function NavBar() {
                             {item.label}
                         </button>
                     ))}
-                    <a
-                        href="mailto:arthur.louette@uliege.be"
+                    <button
+                        onClick={() => handleClick("contact")}
                         className="ml-4 px-5 py-2 bg-accent text-bg-dark text-sm font-medium tracking-wide hover:bg-accent-hover transition-colors duration-200"
                     >
                         Contact
-                    </a>
+                    </button>
                 </div>
 
                 {/* Mobile Toggle */}
@@ -114,12 +113,12 @@ export default function NavBar() {
                                 {item.label}
                             </button>
                         ))}
-                        <a
-                            href="mailto:arthur.louette@uliege.be"
-                            className="mt-4 px-5 py-3 bg-accent text-bg-dark text-sm font-medium tracking-wide text-center hover:bg-accent-hover transition-colors duration-200"
+                        <button
+                            onClick={() => handleClick("contact")}
+                            className="mt-4 px-5 py-3 bg-accent text-bg-dark text-sm font-medium tracking-wide text-center hover:bg-accent-hover transition-colors duration-200 w-full"
                         >
                             Contact
-                        </a>
+                        </button>
                     </div>
                 </div>
             )}
