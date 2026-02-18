@@ -625,9 +625,8 @@ export default function Home() {
                   alt="Football Team"
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
-                  style={{ filter: "saturate(0.6) brightness(0.8)" }}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-bg-dark-card/90 via-bg-dark-card/20 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-bg-dark-card/80 via-transparent to-transparent" />
                 <div className="absolute bottom-0 left-0 p-6">
                   <div className="flex items-center gap-2 mb-2 text-accent">
                     <Trophy size={16} />
@@ -635,7 +634,7 @@ export default function Home() {
                   </div>
                   <h3 className="font-display text-xl font-bold text-text-primary">Team Spirit</h3>
                   <p className="text-text-secondary text-sm mt-2 max-w-sm">
-                    Playing football keeps me grounded. Strategies on the field are surprisingly similar to multi-agent coordination.
+                    Playing football with my team is how I disconnect. Simple as that.
                   </p>
                 </div>
               </div>
@@ -649,19 +648,19 @@ export default function Home() {
                   muted
                   loop
                   playsInline
-                  className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity duration-500"
+                  className="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500"
                 >
                   <source src="/videos/takeoff.mp4" type="video/mp4" />
                 </video>
-                <div className="absolute inset-0 bg-gradient-to-t from-bg-dark-card/90 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-bg-dark-card/80 via-transparent to-transparent" />
                 <div className="absolute bottom-0 left-0 p-6">
                   <div className="flex items-center gap-2 mb-2 text-accent">
                     <Gamepad2 size={16} />
                     <span className="font-mono text-[10px] tracking-[0.2em] uppercase">FPV Piloting</span>
                   </div>
-                  <h3 className="font-display text-xl font-bold text-text-primary">Flight Control</h3>
+                  <h3 className="font-display text-xl font-bold text-text-primary">Free Flight</h3>
                   <p className="text-text-secondary text-sm mt-2 max-w-sm">
-                    Building and piloting FPV drones gives me an intuitive understanding of flight dynamics that informs my research.
+                    Building and flying FPV drones allows me to experience flight from a different perspective.
                   </p>
                 </div>
               </div>
