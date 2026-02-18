@@ -4,12 +4,13 @@ import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 
 const NAV_ITEMS = [
-    { id: "about", label: "ABOUT" },
-    { id: "research", label: "RESEARCH" },
-    { id: "news", label: "NEWS" },
-    { id: "education", label: "EDUCATION" },
-    { id: "teaching", label: "TEACHING" },
-    { id: "contact", label: "CONTACT" },
+    { id: "about", label: "About" },
+    { id: "research", label: "Research" },
+    { id: "publications", label: "Publications" },
+    { id: "news", label: "News" },
+    { id: "education", label: "Education" },
+    { id: "teaching", label: "Teaching" },
+    { id: "contact", label: "Contact" },
 ];
 
 export default function NavBar() {
@@ -46,72 +47,78 @@ export default function NavBar() {
 
     return (
         <nav
-            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
-                ? "bg-background/90 backdrop-blur-sm border-b border-border"
+            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled
+                ? "bg-bg-dark/90 backdrop-blur-md border-b border-border-dark"
                 : "bg-transparent"
                 }`}
         >
-            <div className="max-w-7xl mx-auto px-4 md:px-6 flex items-center justify-between h-14">
-                {/* Logo / Callsign */}
+            <div className="max-w-7xl mx-auto px-6 md:px-8 flex items-center justify-between h-16 md:h-20">
+                {/* Name */}
                 <a
                     href="#"
-                    className="font-display font-bold text-lg tracking-widest text-accent"
+                    className="font-display font-bold text-lg tracking-wide text-text-primary hover:text-accent transition-colors"
                     onClick={(e) => {
                         e.preventDefault();
                         window.scrollTo({ top: 0, behavior: "smooth" });
                     }}
                 >
-                    A.LOUETTE<span className="animate-blink">_</span>
+                    A. Louette
                 </a>
 
                 {/* Desktop Nav */}
-                <div className="hidden md:flex items-center gap-1">
-                    {NAV_ITEMS.map((item, i) => (
+                <div className="hidden lg:flex items-center gap-1">
+                    {NAV_ITEMS.map((item) => (
                         <button
                             key={item.id}
                             onClick={() => handleClick(item.id)}
-                            className={`font-mono text-[11px] tracking-widest px-3 py-1.5 transition-colors ${activeSection === item.id
+                            className={`text-sm tracking-wide px-4 py-2 transition-colors duration-200 cursor-pointer ${activeSection === item.id
                                 ? "text-accent"
-                                : "text-muted hover:text-foreground"
+                                : "text-text-secondary hover:text-text-primary"
                                 }`}
                         >
-                            <span className="text-accent/40 mr-1" aria-hidden="true">
-                                0{i + 1}
-                            </span>
                             {item.label}
                         </button>
                     ))}
+                    <a
+                        href="mailto:arthur.louette@uliege.be"
+                        className="ml-4 px-5 py-2 bg-accent text-bg-dark text-sm font-medium tracking-wide hover:bg-accent-hover transition-colors duration-200"
+                    >
+                        Contact
+                    </a>
                 </div>
 
                 {/* Mobile Toggle */}
                 <button
                     onClick={() => setMenuOpen(!menuOpen)}
-                    className="md:hidden text-accent p-2"
+                    className="lg:hidden text-text-primary p-2 cursor-pointer"
                     aria-label="Toggle menu"
                 >
-                    {menuOpen ? <X size={20} /> : <Menu size={20} />}
+                    {menuOpen ? <X size={22} /> : <Menu size={22} />}
                 </button>
             </div>
 
             {/* Mobile Menu */}
             {menuOpen && (
-                <div className="md:hidden bg-background/95 backdrop-blur-sm border-b border-border">
-                    <div className="px-4 py-4 flex flex-col gap-1">
-                        {NAV_ITEMS.map((item, i) => (
+                <div className="lg:hidden bg-bg-dark/95 backdrop-blur-md border-b border-border-dark">
+                    <div className="px-6 py-6 flex flex-col gap-1">
+                        {NAV_ITEMS.map((item) => (
                             <button
                                 key={item.id}
                                 onClick={() => handleClick(item.id)}
-                                className={`font-mono text-xs tracking-widest px-3 py-2.5 text-left transition-colors ${activeSection === item.id
-                                    ? "text-accent bg-accent/5"
-                                    : "text-muted hover:text-foreground"
+                                className={`text-sm tracking-wide px-4 py-3 text-left transition-colors duration-200 cursor-pointer ${activeSection === item.id
+                                    ? "text-accent"
+                                    : "text-text-secondary hover:text-text-primary"
                                     }`}
                             >
-                                <span className="text-accent/40 mr-2" aria-hidden="true">
-                                    0{i + 1}
-                                </span>
                                 {item.label}
                             </button>
                         ))}
+                        <a
+                            href="mailto:arthur.louette@uliege.be"
+                            className="mt-4 px-5 py-3 bg-accent text-bg-dark text-sm font-medium tracking-wide text-center hover:bg-accent-hover transition-colors duration-200"
+                        >
+                            Contact
+                        </a>
                     </div>
                 </div>
             )}

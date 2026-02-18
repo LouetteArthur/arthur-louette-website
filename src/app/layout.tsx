@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import { Rajdhani, Inter, JetBrains_Mono } from "next/font/google";
+import { Space_Grotesk, Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
-const rajdhani = Rajdhani({
-  variable: "--font-rajdhani",
+const spaceGrotesk = Space_Grotesk({
+  variable: "--font-space-grotesk",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
   display: "swap",
@@ -22,9 +22,9 @@ const jetbrains = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Arthur Louette — PhD Candidate // RL // Robotics",
+  title: "Arthur Louette — PhD Researcher · Reinforcement Learning · Robotics",
   description:
-    "PhD Candidate in Robotic Reinforcement Learning at the University of Liège. Deploying RL agents from simulation to reality for defence applications.",
+    "PhD Researcher in Robotic Reinforcement Learning at the University of Liège. Deploying RL agents from simulation to reality for defence and autonomous systems.",
   keywords: [
     "Reinforcement Learning",
     "Robotics",
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Arthur Louette" }],
   openGraph: {
-    title: "Arthur Louette — PhD Candidate // RL // Robotics",
+    title: "Arthur Louette — PhD Researcher · RL · Robotics",
     description:
       "Deploying RL agents from simulation to reality for defence and autonomous systems.",
     type: "website",
@@ -53,7 +53,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${rajdhani.variable} ${inter.variable} ${jetbrains.variable} antialiased scanline-overlay hud-grid-bg`}
+        className={`${spaceGrotesk.variable} ${inter.variable} ${jetbrains.variable} antialiased grain-overlay`}
       >
         {children}
       </body>

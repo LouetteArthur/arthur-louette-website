@@ -2,31 +2,39 @@ interface SectionHeaderProps {
     index: string;
     title: string;
     subtitle?: string;
+    light?: boolean;
 }
 
-export default function SectionHeader({ index, title, subtitle }: SectionHeaderProps) {
+export default function SectionHeader({
+    index,
+    title,
+    subtitle,
+    light = false,
+}: SectionHeaderProps) {
     return (
-        <div className="mb-12">
-            <div className="flex items-center gap-3 mb-3">
-                <span
-                    className="font-mono text-xs tracking-widest text-accent/60 uppercase"
-                    aria-hidden="true"
-                >
-          // {index}
+        <div className="mb-16">
+            <div className="flex items-center gap-4 mb-4">
+                <span className="font-mono text-xs tracking-[0.2em] uppercase text-accent">
+                    {index}
                 </span>
-                <span className="h-px flex-1 bg-accent/20" aria-hidden="true" />
                 <span
-                    className="font-mono text-[10px] tracking-wider text-muted"
+                    className={`h-px flex-1 ${light ? "bg-border-light" : "bg-border-dark"}`}
                     aria-hidden="true"
-                >
-                    &#9679; ACTIVE
-                </span>
+                />
             </div>
-            <h2 className="font-display text-3xl md:text-4xl font-bold tracking-wider uppercase text-foreground">
+            <h2
+                className={`font-display text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight ${light ? "text-text-dark" : "text-text-primary"
+                    }`}
+            >
                 {title}
             </h2>
             {subtitle && (
-                <p className="font-mono text-sm text-muted mt-2 tracking-wide">{subtitle}</p>
+                <p
+                    className={`text-lg mt-4 max-w-2xl leading-relaxed ${light ? "text-text-dark-secondary" : "text-text-secondary"
+                        }`}
+                >
+                    {subtitle}
+                </p>
             )}
         </div>
     );

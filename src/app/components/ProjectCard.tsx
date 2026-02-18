@@ -1,7 +1,5 @@
 import Image from "next/image";
 import { ExternalLink, Play } from "lucide-react";
-import HudCorners from "./HudCorners";
-import SkillTag from "./SkillTag";
 
 interface ProjectCardProps {
     title: string;
@@ -27,11 +25,9 @@ export default function ProjectCard({
     youtubeUrl,
 }: ProjectCardProps) {
     return (
-        <div className="group relative border border-border bg-card hover:border-accent/40 transition-all duration-300">
-            <HudCorners />
-
+        <div className="group relative h-full border border-border-dark bg-bg-dark-card hover:border-accent/30 transition-all duration-500">
             {/* Media — Video or Image */}
-            <div className="relative h-48 overflow-hidden border-b border-border">
+            <div className="relative h-48 overflow-hidden border-b border-border-dark">
                 {video ? (
                     <video
                         src={video}
@@ -52,28 +48,37 @@ export default function ProjectCard({
                         sizes="(max-width: 768px) 100vw, 33vw"
                     />
                 ) : null}
-                <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-bg-dark-card via-transparent to-transparent" />
 
                 {/* Status badge */}
-                <div className="absolute top-3 right-3 flex items-center gap-1.5 font-mono text-[10px] tracking-widest text-accent uppercase">
-                    <span className="w-1.5 h-1.5 bg-accent rounded-full animate-pulse-glow" />
+                <div className="absolute top-3 right-3 flex items-center gap-1.5 font-mono text-[10px] tracking-[0.2em] text-accent uppercase">
+                    <span className="w-1.5 h-1.5 bg-accent rounded-full animate-pulse-soft" />
                     {status}
                 </div>
             </div>
 
             {/* Content */}
-            <div className="p-5">
-                <p className="font-mono text-[10px] text-muted tracking-widest mb-1 uppercase">
+            <div className="p-6">
+                <span className="font-mono text-[10px] text-accent tracking-[0.2em] uppercase">
                     {codename}
-                </p>
-                <h3 className="font-display text-xl font-bold tracking-wide uppercase text-foreground mb-3">
+                </span>
+
+                <h3 className="font-display text-xl font-bold tracking-tight text-text-primary mt-2 mb-3">
                     {title}
                 </h3>
-                <p className="text-sm text-muted leading-relaxed mb-4">{description}</p>
 
-                <div className="flex flex-wrap gap-1.5 mb-4">
+                <p className="text-base text-text-secondary leading-relaxed mb-5">
+                    {description}
+                </p>
+
+                <div className="flex flex-wrap gap-1.5 mb-5">
                     {tags.map((tag) => (
-                        <SkillTag key={tag} label={tag} />
+                        <span
+                            key={tag}
+                            className="inline-flex items-center px-2.5 py-1 font-mono text-[10px] uppercase tracking-wider border border-accent/20 text-accent/80 bg-accent/5"
+                        >
+                            {tag}
+                        </span>
                     ))}
                 </div>
 
@@ -82,10 +87,10 @@ export default function ProjectCard({
                         href={youtubeUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 px-3 py-1.5 border border-warning/30 text-warning font-mono text-xs tracking-wider uppercase hover:bg-warning hover:text-background transition-all duration-200"
+                        className="inline-flex items-center gap-2 px-4 py-2 border border-highlight/30 text-highlight font-mono text-xs tracking-wider uppercase hover:bg-highlight hover:text-bg-dark transition-all duration-200"
                     >
                         <Play size={12} />
-                        WATCH VIDEO
+                        Watch Video
                         <ExternalLink size={10} className="opacity-60" />
                     </a>
                 )}

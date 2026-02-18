@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import {
   Linkedin,
@@ -10,13 +12,20 @@ import {
   Play,
   Calendar,
   MapPin,
+  ArrowRight,
+  FileText,
 } from "lucide-react";
 import NavBar from "./components/NavBar";
 import SectionHeader from "./components/SectionHeader";
 import ProjectCard from "./components/ProjectCard";
+import PublicationCard from "./components/PublicationCard";
 import TimelineItem from "./components/TimelineItem";
 import SkillTag from "./components/SkillTag";
-import HudCorners from "./components/HudCorners";
+import AnimatedSection from "./components/AnimatedSection";
+
+/* ═══════════════════════════════════════
+   DATA
+   ═══════════════════════════════════════ */
 
 function XIcon({ size = 16 }: { size?: number }) {
   return (
@@ -40,12 +49,12 @@ const SOCIAL_LINKS = [
   {
     href: "https://scholar.google.fr/citations?user=P0jRcPkAAAAJ",
     icon: GraduationCap,
-    label: "Google Scholar",
+    label: "Scholar",
   },
   {
     href: "https://x.com/arthurlouette",
     icon: XIcon,
-    label: "X / Twitter",
+    label: "X",
     isCustom: true,
   },
   {
@@ -69,7 +78,7 @@ const RESEARCH_FOCUS = [
 const PROJECTS = [
   {
     title: "Pursuit-Evasion Drones",
-    codename: "PROJECT // INTERCEPTOR",
+    codename: "INTERCEPTOR",
     description:
       "Multi-agent reinforcement learning for autonomous drone pursuit-evasion scenarios. Training adversarial pursuer and evader policies in high-fidelity simulation with sim-to-real transfer to real quadrotors.",
     tags: ["Multi-Agent RL", "Isaac Sim", "Quadcopter"],
@@ -80,7 +89,7 @@ const PROJECTS = [
   },
   {
     title: "Counter-Drone Systems",
-    codename: "PROJECT // SENTINEL",
+    codename: "SENTINEL",
     description:
       "Developing autonomous counter-UAS defence systems using reinforcement learning. Intelligent tracking and interception of hostile drone threats using teleoperated weapon station systems.",
     tags: ["C-UAS", "Reinforcement Learning", "Defence", "Isaac Sim"],
@@ -91,7 +100,7 @@ const PROJECTS = [
   },
   {
     title: "Delta Robot Sorting",
-    codename: "PROJECT // DELTA",
+    codename: "DELTA",
     description:
       "High-speed robotic sorting using a delta robot controlled by reinforcement learning. Bridging the sim-to-real gap for precise, rapid pick-and-place operations at GeMMe lab.",
     tags: ["Robotics", "Sim-to-Real", "Manipulation", "Control"],
@@ -100,6 +109,53 @@ const PROJECTS = [
     imageAlt: "Delta robot performing high-speed sorting",
     status: "COMPLETED",
     youtubeUrl: "https://www.youtube.com/shorts/ONAUlJNZ6AA",
+  },
+];
+
+const PUBLICATIONS = [
+  {
+    title: "Existing Gaps In Reinforcement Learning For Drone Warfare",
+    authors: ["Arthur Louette", "Pascal Leroy", "Yanis Geurts", "Damien Ernst"],
+    venue: "OpenReview",
+    year: "2025",
+    citations: 0,
+    link: "https://scholar.google.fr/citations?view_op=view_citation&hl=fr&user=P0jRcPkAAAAJ&citation_for_view=P0jRcPkAAAAJ:UeHWp8X0CEIC",
+    abstract: "As warfare becomes increasingly digital and autonomous, Reinforcement Learning (RL) has emerged as a promising technique for developing intelligent and adaptive drone behaviors. This paper identifies several remaining gaps in the current state of RL for drone warfare, focusing on bridging the gap between simulated training and real-world deployment.",
+    tags: ["RL", "Drone Warfare", "Survey"],
+    isFirstAuthor: true,
+  },
+  {
+    title: "Autonomous Drone Combat: A Mutli-Agent Reinforcement Learning Approach",
+    authors: ["Julien Hansen", "Arthur Louette", "Pascal Leroy", "Damien Ernst"],
+    venue: "ORBi",
+    year: "2025",
+    citations: 0,
+    link: "https://scholar.google.fr/citations?view_op=view_citation&hl=fr&user=P0jRcPkAAAAJ&citation_for_view=P0jRcPkAAAAJ:IjCSPb-OGe4C",
+    abstract: "This paper presents a multi-agent reinforcement learning environment for drone combat built on IsaacLab. It includes an in-depth comparison between decentralized learning and self-play schemes in competitive settings, confirming the benefits of self-play for autonomous combat.",
+    tags: ["MARL", "Drone Combat", "IsaacLab"],
+    supervisedAuthor: "Julien Hansen",
+  },
+  {
+    title: "Reinforcement Learning to improve delta robot throws for sorting scrap metal",
+    authors: ["Arthur Louette", "Gaspard Lambrechts", "Damien Ernst", "Eric Pirard", "Godefroid Dislaire"],
+    venue: "arXiv preprint arXiv:2406.13453",
+    year: "2024",
+    citations: 8,
+    link: "https://scholar.google.fr/citations?view_op=view_citation&hl=fr&user=P0jRcPkAAAAJ&citation_for_view=P0jRcPkAAAAJ:d1gkVwhDpl0C",
+    abstract: "This study proposes a novel approach based on reinforcement learning (RL) to enhance the sorting efficiency of scrap metal using delta robots and a Pick-and-Place (PaP) process. The approach uses a 3D-simulated environment to train an RL agent to perform throws of scrap metal into different bins, significantly improving sorting throughput.",
+    tags: ["Robotics", "Sim-to-Real", "Manipulation"],
+    isFirstAuthor: true,
+  },
+  {
+    title: "Exploiting reinforcement learning to improve robotic throws",
+    authors: ["Arthur Louette"],
+    venue: "Master Thesis, ULiège",
+    year: "2023",
+    citations: 0,
+    link: "https://scholar.google.fr/citations?view_op=view_citation&hl=fr&user=P0jRcPkAAAAJ&citation_for_view=P0jRcPkAAAAJ:u-x6o8ySG0sC",
+    abstract: "A study on exploiting reinforcement learning to teach an ABB Flexpicker robot to accurately throw objects into bins using a high-fidelity simulator.",
+    tags: ["Master Thesis", "Robotics"],
+    isFirstAuthor: true,
   },
 ];
 
@@ -120,7 +176,8 @@ const NEWS = [
     description:
       "Participated in the Inno4Def drone hackathon organized by La Défense. Flying drones in simulation using Liftoff and developing autonomous strategies.",
     image: "/images/drone-sim.webp",
-    imageAlt: "Arthur Louette flying drones at Inno4Def hackathon using Liftoff simulator",
+    imageAlt:
+      "Arthur Louette flying drones at Inno4Def hackathon using Liftoff simulator",
     location: "Belgium",
   },
 ];
@@ -149,405 +206,62 @@ const EDUCATION = [
   },
 ];
 
+/* ═══════════════════════════════════════
+   PAGE
+   ═══════════════════════════════════════ */
+
 export default function Home() {
   return (
     <>
       <NavBar />
 
-      {/* ═══════════════════════════════════════
-          HERO SECTION
-          ═══════════════════════════════════════ */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Decorative grid lines */}
+      {/* ═══════════ HERO ═══════════ */}
+      <section className="relative min-h-screen flex items-center justify-center gradient-mesh overflow-hidden">
         <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
-          <div className="absolute top-[20%] left-0 right-0 h-px bg-accent/5" />
-          <div className="absolute top-[80%] left-0 right-0 h-px bg-accent/5" />
-          <div className="absolute left-[15%] top-0 bottom-0 w-px bg-accent/5" />
-          <div className="absolute right-[15%] top-0 bottom-0 w-px bg-accent/5" />
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-accent/[0.03] rounded-full blur-3xl" />
+          <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-accent/[0.02] rounded-full blur-3xl" />
         </div>
 
-        {/* Corner coords — B28 Montefiore, ULiège */}
-        <span
-          className="absolute top-20 left-6 font-mono text-[10px] text-accent/30 tracking-widest"
-          aria-hidden="true"
-        >
-          50.5836°N 5.5611°E
-        </span>
-        <span
-          className="absolute top-20 right-6 font-mono text-[10px] text-accent/30 tracking-widest"
-          aria-hidden="true"
-        >
-          SYS.ONLINE
-        </span>
-        <span
-          className="absolute bottom-8 left-6 font-mono text-[10px] text-accent/30 tracking-widest"
-          aria-hidden="true"
-        >
-          B28 // MONTEFIORE
-        </span>
-        <span
-          className="absolute bottom-8 right-6 font-mono text-[10px] text-accent/30 tracking-widest"
-          aria-hidden="true"
-        >
-          LIÈGE // BELGIUM
-        </span>
-
-        <div className="section-container text-center relative z-10">
-          {/* Photo — Airshow profile */}
-          <div className="relative mx-auto w-32 h-32 md:w-40 md:h-40 mb-8">
-            <div className="absolute inset-0 border border-accent/40 rotate-45 scale-[1.15]" aria-hidden="true" />
-            <div className="relative w-full h-full border border-accent/60 overflow-hidden">
-              <Image
-                src="/images/profile.png"
-                alt="Arthur Louette"
-                fill
-                className="object-cover object-[center_15%] rotate-180"
-                priority
-                sizes="160px"
-              />
-            </div>
-            <div className="absolute -bottom-1.5 -right-1.5 w-3 h-3 bg-accent animate-pulse-glow" aria-hidden="true" />
-          </div>
-
-          {/* Name */}
-          <div className="mb-4">
-            <p
-              className="font-mono text-xs text-accent/60 tracking-[0.3em] mb-3 uppercase"
-              aria-hidden="true"
-            >
-              &#91; CALLSIGN &#93;
-            </p>
-            <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-bold tracking-wider uppercase text-foreground animate-flicker">
-              ARTHUR
-              <span className="text-accent"> LOUETTE</span>
-            </h1>
-          </div>
-
-          {/* Title */}
-          <p className="font-mono text-sm md:text-base text-muted tracking-[0.15em] mb-8">
-            PHD CANDIDATE{" "}
-            <span className="text-accent/60">//</span> REINFORCEMENT
-            LEARNING <span className="text-accent/60">//</span> ROBOTICS
-          </p>
-
-          {/* Social Links */}
-          <div className="flex items-center justify-center gap-4 mb-12">
-            {SOCIAL_LINKS.map((link) => {
-              const Icon = link.icon;
-              return (
-                <a
-                  key={link.label}
-                  href={link.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group relative w-10 h-10 border border-accent/30 flex items-center justify-center text-muted hover:text-accent hover:border-accent/60 hover:shadow-[0_0_12px_var(--color-accent-dim)] transition-all duration-200"
-                  aria-label={link.label}
-                >
-                  <Icon size={16} />
-                </a>
-              );
-            })}
-          </div>
-
-          {/* Scroll indicator */}
-          <a
-            href="#about"
-            className="inline-flex flex-col items-center gap-1 text-accent/40 hover:text-accent transition-colors"
-            aria-label="Scroll to about section"
-          >
-            <span className="font-mono text-[10px] tracking-widest uppercase">
-              SCROLL
-            </span>
-            <ChevronDown size={16} className="animate-bounce" />
-          </a>
-        </div>
-      </section>
-
-      {/* ═══════════════════════════════════════
-          ABOUT / RESEARCH
-          ═══════════════════════════════════════ */}
-      <section id="about" className="relative border-t border-border">
-        <div className="section-container">
-          <SectionHeader
-            index="01"
-            title="About"
-            subtitle="CURRENT STATUS: OPERATIONAL"
-          />
-
-          <div className="grid md:grid-cols-[1fr_auto] gap-12 items-start">
-            <div>
-              {/* Mission Status */}
-              <div className="relative border border-border p-6 mb-8">
-                <HudCorners />
-                <p className="font-mono text-xs text-accent tracking-widest mb-3 uppercase">
-                  &#9655; CURRENT MISSION
-                </p>
-                <p className="text-lg text-foreground leading-relaxed">
-                  PhD Candidate in{" "}
-                  <span className="text-accent font-medium">
-                    Robotic Reinforcement Learning
-                  </span>{" "}
-                  at the{" "}
-                  <span className="text-accent font-medium">
-                    University of Liège
-                  </span>{" "}
-                  (Montefiore Institute), deploying RL agents
-                  from simulation to reality for defence and autonomous systems.
-                </p>
-                <p className="text-sm text-muted mt-3 leading-relaxed">
-                  Supervised by{" "}
-                  <span className="text-foreground">Prof. Damien Ernst</span>.
-                  Research conducted in collaboration with{" "}
-                  <span className="text-warning">FN Herstal</span>,{" "}
-                  <span className="text-warning">John Cockerill Defence</span>,
-                  and <span className="text-warning">Thales</span>.
-                </p>
-              </div>
-
-              {/* Research Focus Tags */}
-              <div>
-                <p className="font-mono text-xs text-muted tracking-widest mb-4 uppercase">
-                  &#9655; RESEARCH MODULES
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  {RESEARCH_FOCUS.map((focus) => (
-                    <SkillTag key={focus} label={focus} />
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            {/* NATO Photo */}
-            <div className="hidden md:block relative w-64">
-              <div className="relative border border-border overflow-hidden">
-                <HudCorners />
+        <div className="section-container text-center relative z-10 max-w-5xl mx-auto px-6">
+          {/* Profile Photo */}
+          <AnimatedSection>
+            <div className="relative mx-auto w-32 h-32 md:w-40 md:h-40 mb-10">
+              <div className="relative w-full h-full rounded-full overflow-hidden border-2 border-accent/30">
                 <Image
-                  src="/images/nato.webp"
-                  alt="Arthur Louette at NATO headquarters"
-                  width={256}
-                  height={192}
-                  className="object-cover w-full"
-                  style={{ filter: "saturate(0.7) brightness(0.9)" }}
+                  src="/images/profile.png"
+                  alt="Arthur Louette"
+                  fill
+                  className="object-cover object-[center_15%]"
+                  priority
+                  sizes="160px"
                 />
               </div>
-              <p className="font-mono text-[10px] text-muted/60 mt-2 tracking-wider text-center">
-                NATO HQ // BRUSSELS
-              </p>
             </div>
-          </div>
-        </div>
-      </section>
+          </AnimatedSection>
 
-      {/* ═══════════════════════════════════════
-          RESEARCH PROJECTS
-          ═══════════════════════════════════════ */}
-      <section id="research" className="relative border-t border-border bg-surface/50">
-        <div className="section-container">
-          <SectionHeader
-            index="02"
-            title="Research Projects"
-            subtitle="DEPLOYING RL AGENTS FROM SIMULATION TO REALITY"
-          />
+          <AnimatedSection delay={0.2}>
+            <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-text-primary leading-[1.1] mb-4">
+              Arthur
+              <span className="text-accent"> Louette</span>
+            </h1>
+          </AnimatedSection>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {PROJECTS.map((project) => (
-              <ProjectCard key={project.codename} {...project} />
-            ))}
-          </div>
-        </div>
-      </section>
+          <AnimatedSection delay={0.3}>
+            <p className="font-mono text-sm md:text-base text-text-secondary tracking-wide mb-8">
+              PhD Researcher · Reinforcement Learning · Robotics
+            </p>
+          </AnimatedSection>
 
-      {/* ═══════════════════════════════════════
-          NEWS / ACTUALITÉS
-          ═══════════════════════════════════════ */}
-      <section id="news" className="relative border-t border-border">
-        <div className="section-container">
-          <SectionHeader
-            index="03"
-            title="News"
-            subtitle="RECENT OPERATIONS & EVENTS"
-          />
+          <AnimatedSection delay={0.4}>
+            <p className="text-lg md:text-xl text-text-secondary max-w-xl mx-auto leading-relaxed mb-10">
+              Developing robust RL agents for robotic autonomy in complex, unpredictable environments.
+              Bridging the gap from simulation to reality for dual-use applications.
+            </p>
+          </AnimatedSection>
 
-          <div className="grid md:grid-cols-2 gap-6">
-            {NEWS.map((item) => (
-              <div
-                key={item.title}
-                className="group relative border border-border bg-card hover:border-accent/40 transition-all duration-300"
-              >
-                <HudCorners />
-
-                {/* Image */}
-                <div className="relative h-48 overflow-hidden border-b border-border">
-                  <Image
-                    src={item.image}
-                    alt={item.imageAlt}
-                    fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
-                    style={{ filter: "saturate(0.7) brightness(0.85)" }}
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent" />
-                </div>
-
-                {/* Content */}
-                <div className="p-5">
-                  <div className="flex items-center gap-3 mb-2">
-                    <span className="font-mono text-[10px] text-accent tracking-widest flex items-center gap-1.5">
-                      <Calendar size={10} />
-                      {item.date}
-                    </span>
-                    <span className="font-mono text-[10px] text-muted tracking-widest flex items-center gap-1.5">
-                      <MapPin size={10} />
-                      {item.location}
-                    </span>
-                  </div>
-                  <h3 className="font-display text-lg font-bold tracking-wide uppercase text-foreground mb-2">
-                    {item.title}
-                  </h3>
-                  <p className="text-sm text-muted leading-relaxed mb-4">
-                    {item.description}
-                  </p>
-
-                  {item.youtubeUrl && (
-                    <a
-                      href={item.youtubeUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 px-3 py-1.5 border border-warning/30 text-warning font-mono text-xs tracking-wider uppercase hover:bg-warning hover:text-background transition-all duration-200"
-                    >
-                      <Play size={12} />
-                      WATCH DEMO
-                      <ExternalLink size={10} className="opacity-60" />
-                    </a>
-                  )}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ═══════════════════════════════════════
-          EDUCATION
-          ═══════════════════════════════════════ */}
-      <section id="education" className="relative border-t border-border bg-surface/50">
-        <div className="section-container">
-          <SectionHeader
-            index="04"
-            title="Education"
-            subtitle="ACADEMIC TRAJECTORY"
-          />
-
-          <div className="max-w-2xl">
-            {EDUCATION.map((item, i) => (
-              <TimelineItem
-                key={item.period}
-                {...item}
-                isLast={i === EDUCATION.length - 1}
-              />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ═══════════════════════════════════════
-          TEACHING
-          ═══════════════════════════════════════ */}
-      <section id="teaching" className="relative border-t border-border">
-        <div className="section-container">
-          <SectionHeader
-            index="05"
-            title="Teaching"
-            subtitle="KNOWLEDGE TRANSFER PROTOCOL"
-          />
-
-          <div className="relative border border-border p-6 max-w-2xl">
-            <HudCorners />
-            <div className="flex items-start gap-4">
-              <div className="w-10 h-10 border border-accent/40 flex items-center justify-center text-accent shrink-0">
-                <BookOpen size={18} />
-              </div>
-              <div>
-                <p className="font-mono text-xs text-accent tracking-widest mb-1">
-                  2024 — 2026
-                </p>
-                <h3 className="font-display text-lg font-bold tracking-wide uppercase text-foreground">
-                  Teaching Assistant — Reinforcement Learning
-                </h3>
-                <p className="font-mono text-sm text-muted mt-1">
-                  INFO0948 // University of Liège
-                </p>
-                <p className="text-sm text-muted/80 mt-3 leading-relaxed">
-                  Assisting in the Reinforcement Learning course, including
-                  tutorial sessions, student project supervision, and exam preparation.
-                  Covering value-based methods, policy gradients, actor-critic architectures,
-                  and multi-agent RL.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ═══════════════════════════════════════
-          CONTACT
-          ═══════════════════════════════════════ */}
-      <section id="contact" className="relative border-t border-border bg-surface/50">
-        <div className="section-container">
-          <SectionHeader
-            index="06"
-            title="Contact"
-            subtitle="ESTABLISH COMMUNICATION LINK"
-          />
-
-          <div className="max-w-2xl">
-            {/* Terminal prompt */}
-            <div className="relative border border-border p-6 font-mono mb-8">
-              <HudCorners />
-              <p className="text-xs text-muted mb-4">
-                <span className="text-accent">louette@uliege</span>
-                <span className="text-muted">:</span>
-                <span className="text-foreground">~</span>
-                <span className="text-muted">$</span>{" "}
-                <span className="text-foreground">cat contact.txt</span>
-              </p>
-              <div className="space-y-2 text-sm">
-                <p>
-                  <span className="text-muted">EMAIL </span>
-                  <span className="text-accent/40">.... </span>
-                  <a
-                    href="mailto:arthur.louette@uliege.be"
-                    className="text-accent hover:underline underline-offset-4"
-                  >
-                    arthur.louette@uliege.be
-                  </a>
-                </p>
-                <p>
-                  <span className="text-muted">AFFIL </span>
-                  <span className="text-accent/40">.... </span>
-                  <span className="text-foreground">
-                    Montefiore Institute, University of Liège
-                  </span>
-                </p>
-                <p>
-                  <span className="text-muted">ADDR  </span>
-                  <span className="text-accent/40">.... </span>
-                  <span className="text-foreground">
-                    Allée de la Découverte 10 (B28), B-4000 Liège, Belgium
-                  </span>
-                </p>
-              </div>
-              <p className="text-xs text-muted mt-4">
-                <span className="text-accent">louette@uliege</span>
-                <span className="text-muted">:</span>
-                <span className="text-foreground">~</span>
-                <span className="text-muted">$ </span>
-                <span className="animate-blink text-accent">▌</span>
-              </p>
-            </div>
-
-            {/* Social Links Row */}
-            <div className="flex flex-wrap gap-3">
+          {/* Social Links */}
+          <AnimatedSection delay={0.5}>
+            <div className="flex items-center justify-center gap-3 mb-12">
               {SOCIAL_LINKS.map((link) => {
                 const Icon = link.icon;
                 return (
@@ -556,31 +270,414 @@ export default function Home() {
                     href={link.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-4 py-2.5 border border-border font-mono text-xs tracking-wider text-muted hover:text-accent hover:border-accent/40 transition-all duration-200 uppercase"
+                    className="group w-10 h-10 border border-border-dark flex items-center justify-center text-text-secondary hover:text-accent hover:border-accent/40 transition-all duration-200"
+                    aria-label={link.label}
                   >
-                    <Icon size={14} />
-                    {link.label}
-                    <ExternalLink size={10} className="opacity-40" />
+                    <Icon size={16} />
                   </a>
                 );
               })}
             </div>
+          </AnimatedSection>
+
+          {/* CTA */}
+          <AnimatedSection delay={0.6}>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <a
+                href="#research"
+                className="group px-8 py-3.5 bg-accent text-bg-dark font-medium tracking-wide hover:bg-accent-hover transition-all duration-200 flex items-center gap-2"
+              >
+                View Research
+                <ArrowRight
+                  size={16}
+                  className="group-hover:translate-x-1 transition-transform"
+                />
+              </a>
+              <a
+                href="/cv.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-8 py-3.5 border border-border-dark text-text-secondary hover:text-text-primary hover:border-text-secondary transition-all duration-200 flex items-center gap-2"
+              >
+                Download CV
+                <ExternalLink size={14} className="opacity-60" />
+              </a>
+            </div>
+          </AnimatedSection>
+
+          <AnimatedSection delay={0.9}>
+            <a
+              href="#about"
+              className="inline-flex flex-col items-center gap-2 mt-20 text-text-tertiary hover:text-accent transition-colors"
+              aria-label="Scroll down"
+            >
+              <ChevronDown size={16} className="animate-bounce" />
+            </a>
+          </AnimatedSection>
+        </div>
+      </section>
+
+      {/* ═══════════ 01 — ABOUT ═══════════ */}
+      <section id="about" className="section-light">
+        <div className="section-divider-light" />
+        <div className="section-container">
+          <AnimatedSection>
+            <SectionHeader index="01" title="About" light />
+          </AnimatedSection>
+
+          <div className="grid md:grid-cols-[1fr_auto] gap-12 items-start">
+            <div>
+              <AnimatedSection delay={0.1}>
+                <p className="text-2xl md:text-3xl font-display font-semibold text-text-dark leading-snug mb-8">
+                  PhD Researcher in{" "}
+                  <span className="text-accent">
+                    Robotic Reinforcement Learning
+                  </span>{" "}
+                  at the University of Liège.
+                </p>
+              </AnimatedSection>
+
+              <AnimatedSection delay={0.2}>
+                <p className="text-text-dark-secondary leading-relaxed mb-10">
+                  My research focuses on deploying RL agents from simulation to
+                  reality for autonomous systems that must operate in extreme conditions.
+                  I work on problems where decisions need to be fast and robust:
+                  high-speed robotic manipulation, autonomous drone navigation, and
+                  adversarial counter-UAS scenarios.
+                </p>
+              </AnimatedSection>
+
+              <div className="grid sm:grid-cols-3 gap-6 mb-10">
+                <AnimatedSection delay={0.25}>
+                  <div className="border-l-2 border-accent pl-5">
+                    <p className="font-mono text-[10px] text-accent tracking-[0.2em] uppercase mb-2">
+                      Supervisor
+                    </p>
+                    <p className="text-base text-text-dark-secondary leading-relaxed">
+                      Prof. Damien Ernst, Montefiore Institute, University of
+                      Liège.
+                    </p>
+                  </div>
+                </AnimatedSection>
+
+                <AnimatedSection delay={0.35}>
+                  <div className="border-l-2 border-accent pl-5">
+                    <p className="font-mono text-[10px] text-accent tracking-[0.2em] uppercase mb-2">
+                      Collaborations
+                    </p>
+                    <p className="text-base text-text-dark-secondary leading-relaxed">
+                      FN Herstal, John Cockerill Defence, and Thales.
+                    </p>
+                  </div>
+                </AnimatedSection>
+
+                <AnimatedSection delay={0.45}>
+                  <div className="border-l-2 border-accent pl-5">
+                    <p className="font-mono text-[10px] text-accent tracking-[0.2em] uppercase mb-2">
+                      Location
+                    </p>
+                    <p className="text-base text-text-dark-secondary leading-relaxed">
+                      B28 Montefiore, Allée de la Découverte 10, Liège,
+                      Belgium.
+                    </p>
+                  </div>
+                </AnimatedSection>
+              </div>
+
+              {/* Research Focus Tags */}
+              <AnimatedSection delay={0.5}>
+                <p className="font-mono text-[10px] text-accent tracking-[0.2em] uppercase mb-4">
+                  Research Focus
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {RESEARCH_FOCUS.map((focus) => (
+                    <SkillTag key={focus} label={focus} />
+                  ))}
+                </div>
+              </AnimatedSection>
+            </div>
+
+            {/* NATO Photo */}
+            <AnimatedSection delay={0.3} className="hidden md:block">
+              <div className="relative w-64">
+                <div className="relative overflow-hidden border border-border-light">
+                  <Image
+                    src="/images/nato.webp"
+                    alt="Arthur Louette at NATO headquarters"
+                    width={256}
+                    height={192}
+                    className="object-cover w-full"
+                    style={{ filter: "saturate(0.7) brightness(0.9)" }}
+                  />
+                </div>
+                <p className="font-mono text-[10px] text-text-dark-secondary/60 mt-2 tracking-wider text-center">
+                  NATO HQ — Brussels
+                </p>
+              </div>
+            </AnimatedSection>
           </div>
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════
-          FOOTER
-          ═══════════════════════════════════════ */}
-      <footer className="border-t border-border py-8">
-        <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="font-mono text-[11px] text-muted/60 tracking-wider">
-            © {new Date().getFullYear()} ARTHUR LOUETTE{" "}
-            <span className="text-accent/30">//</span> ALL RIGHTS RESERVED
+      {/* ═══════════ 02 — RESEARCH PROJECTS ═══════════ */}
+      <section id="research" className="section-dark">
+        <div className="section-divider" />
+        <div className="section-container">
+          <AnimatedSection>
+            <SectionHeader
+              index="02"
+              title="Research Projects"
+              subtitle="Deploying RL agents from simulation to reality."
+            />
+          </AnimatedSection>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {PROJECTS.map((project, i) => (
+              <AnimatedSection key={project.codename} delay={0.1 * (i + 1)}>
+                <ProjectCard {...project} />
+              </AnimatedSection>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════ 03 — PUBLICATIONS ═══════════ */}
+      <section id="publications" className="section-light">
+        <div className="section-divider-light" />
+        <div className="section-container">
+          <AnimatedSection>
+            <SectionHeader
+              index="03"
+              title="Publications"
+              subtitle="Peer-reviewed papers and preprints."
+              light
+            />
+          </AnimatedSection>
+
+          <div className="flex flex-col gap-6">
+            {PUBLICATIONS.map((pub, i) => (
+              <AnimatedSection key={pub.title} delay={0.1 * (i + 1)}>
+                <PublicationCard {...pub} />
+              </AnimatedSection>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════ 04 — NEWS ═══════════ */}
+      <section id="news" className="section-dark">
+        <div className="section-divider" />
+        <div className="section-container">
+          <AnimatedSection>
+            <SectionHeader
+              index="04"
+              title="News"
+              subtitle="Recent events and conferences."
+            />
+          </AnimatedSection>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            {NEWS.map((item, i) => (
+              <AnimatedSection key={item.title} delay={0.1 * (i + 1)}>
+                <div className="group relative h-full border border-border-dark bg-bg-dark-card hover:border-accent/40 hover:shadow-lg transition-all duration-500">
+                  {/* Image */}
+                  <div className="relative h-48 overflow-hidden border-b border-border-dark">
+                    <Image
+                      src={item.image}
+                      alt={item.imageAlt}
+                      fill
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      style={{ filter: "saturate(0.7) brightness(0.9)" }}
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-bg-light-card via-transparent to-transparent" />
+                  </div>
+
+                  {/* Content */}
+                  <div className="p-6">
+                    <div className="flex items-center gap-3 mb-2">
+                      <span className="font-mono text-[10px] text-accent tracking-[0.2em] flex items-center gap-1.5">
+                        <Calendar size={10} />
+                        {item.date}
+                      </span>
+                      <span className="font-mono text-[10px] text-text-dark-secondary tracking-widest flex items-center gap-1.5">
+                        <MapPin size={10} />
+                        {item.location}
+                      </span>
+                    </div>
+                    <h3 className="font-display text-lg font-bold tracking-tight text-text-primary mb-2">
+                      {item.title}
+                    </h3>
+                    <p className="text-base text-text-secondary leading-relaxed mb-4">
+                      {item.description}
+                    </p>
+
+                    {item.youtubeUrl && (
+                      <a
+                        href={item.youtubeUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 px-4 py-2 border border-highlight/30 text-highlight font-mono text-xs tracking-wider uppercase hover:bg-highlight hover:text-bg-light transition-all duration-200"
+                      >
+                        <Play size={12} />
+                        Watch Demo
+                        <ExternalLink size={10} className="opacity-60" />
+                      </a>
+                    )}
+                  </div>
+                </div>
+              </AnimatedSection>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════ 05 — EDUCATION ═══════════ */}
+      <section id="education" className="section-light">
+        <div className="section-divider-light" />
+        <div className="section-container">
+          <AnimatedSection>
+            <SectionHeader
+              index="05"
+              title="Education"
+              subtitle="Academic trajectory."
+              light
+            />
+          </AnimatedSection>
+
+          <AnimatedSection delay={0.1}>
+            <div className="max-w-2xl">
+              {EDUCATION.map((item, i) => (
+                <TimelineItem
+                  key={item.period}
+                  {...item}
+                  isLast={i === EDUCATION.length - 1}
+                />
+              ))}
+            </div>
+          </AnimatedSection>
+        </div>
+      </section>
+
+      {/* ═══════════ 06 — TEACHING ═══════════ */}
+      <section id="teaching" className="section-dark">
+        <div className="section-divider" />
+        <div className="section-container">
+          <AnimatedSection>
+            <SectionHeader index="06" title="Teaching" />
+          </AnimatedSection>
+
+          <AnimatedSection delay={0.15}>
+            <div className="relative max-w-2xl p-6 border border-border-dark bg-bg-dark-card hover:border-accent/40 hover:shadow-lg transition-all duration-500">
+              <div className="flex items-start gap-4">
+                <div className="w-10 h-10 border border-accent/30 flex items-center justify-center text-accent shrink-0">
+                  <BookOpen size={18} />
+                </div>
+                <div>
+                  <p className="font-mono text-[10px] text-accent tracking-[0.2em] uppercase mb-1">
+                    2024 — 2026
+                  </p>
+                  <h3 className="font-display text-lg font-semibold text-text-primary">
+                    Teaching Assistant — Reinforcement Learning
+                  </h3>
+                  <p className="text-sm text-text-secondary mt-1">
+                    INFO0948 · University of Liège
+                  </p>
+                  <p className="text-base text-text-secondary mt-3 leading-relaxed">
+                    Assisting in the Reinforcement Learning course, including
+                    tutorial sessions, student project supervision, and exam
+                    preparation. Covering value-based methods, policy gradients,
+                    actor-critic architectures, and multi-agent RL.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </AnimatedSection>
+        </div>
+      </section>
+
+      {/* ═══════════ 07 — CONTACT ═══════════ */}
+      <section id="contact" className="section-light">
+        <div className="section-divider-light" />
+        <div className="section-container">
+          <div className="max-w-2xl mx-auto text-center">
+            <AnimatedSection>
+              <p className="font-mono text-[10px] text-accent tracking-[0.2em] uppercase mb-4">
+                07
+              </p>
+              <h2 className="font-display text-3xl md:text-4xl font-bold text-text-dark mb-6">
+                Get in Touch
+              </h2>
+            </AnimatedSection>
+
+            <AnimatedSection delay={0.15}>
+              <p className="text-text-dark-secondary mb-4 leading-relaxed">
+                Interested in research collaboration, or just want to chat about
+                reinforcement learning and robotics?
+              </p>
+              <p className="text-text-dark-secondary mb-10">
+                <span className="text-text-tertiary">Affiliation:</span>{" "}
+                Montefiore Institute, University of Liège
+                <br />
+                <span className="text-text-tertiary">Address:</span> Allée de la
+                Découverte 10 (B28), B-4000 Liège, Belgium
+              </p>
+            </AnimatedSection>
+
+            <AnimatedSection delay={0.3}>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a
+                  href="mailto:arthur.louette@uliege.be"
+                  className="inline-flex items-center gap-2 px-10 py-4 bg-accent text-bg-dark font-medium tracking-wide hover:bg-accent-hover transition-all duration-200 text-lg"
+                >
+                  <Mail size={18} />
+                  arthur.louette@uliege.be
+                </a>
+                <a
+                  href="/cv.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-10 py-4 border border-border-light text-text-dark font-medium tracking-wide hover:bg-border-light/50 transition-all duration-200 text-lg"
+                >
+                  <FileText size={18} />
+                  Download CV
+                </a>
+              </div>
+            </AnimatedSection>
+
+            {/* Social Links Row */}
+            <AnimatedSection delay={0.4}>
+              <div className="flex flex-wrap items-center justify-center gap-3 mt-8">
+                {SOCIAL_LINKS.filter((l) => l.label !== "Email").map((link) => {
+                  const Icon = link.icon;
+                  return (
+                    <a
+                      key={link.label}
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-4 py-2.5 border border-border-light font-mono text-xs tracking-wider text-text-dark-secondary hover:text-accent hover:border-accent/40 transition-all duration-200"
+                    >
+                      <Icon size={14} />
+                      {link.label}
+                      <ExternalLink size={10} className="opacity-40" />
+                    </a>
+                  );
+                })}
+              </div>
+            </AnimatedSection>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════ FOOTER ═══════════ */}
+      <footer className="section-dark border-t border-border-dark">
+        <div className="max-w-7xl mx-auto px-6 md:px-8 py-12 flex flex-col md:flex-row items-center justify-between gap-6">
+          <p className="font-display text-sm font-medium text-text-tertiary tracking-wide">
+            Arthur Louette
           </p>
-          <p className="font-mono text-[10px] text-muted/40 tracking-wider">
-            SYSTEM STATUS: NOMINAL{" "}
-            <span className="inline-block w-1.5 h-1.5 bg-accent/60 animate-pulse-glow ml-1 align-middle" />
+          <p className="text-xs text-text-tertiary">
+            © {new Date().getFullYear()} All rights reserved.
           </p>
         </div>
       </footer>
