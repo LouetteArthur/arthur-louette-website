@@ -9,8 +9,6 @@
       "elo": 1547.8,
       "wins": 82,
       "losses": 18,
-      "draws": 0,
-      "kills": 84,
       "deaths": {
         "shot_down": 0,
         "collision": 12,
@@ -18,8 +16,7 @@
         "timeout": 2
       },
       "avg_survival_time": 25.8,
-      "avg_health_remaining": 0.84,
-      "total_hits_received": 0
+      "avg_health_remaining": 0.84
     },
     {
       "rank": 2,
@@ -27,8 +24,6 @@
       "elo": 1540.3,
       "wins": 78,
       "losses": 22,
-      "draws": 0,
-      "kills": 78,
       "deaths": {
         "shot_down": 0,
         "collision": 21,
@@ -36,8 +31,7 @@
         "timeout": 2
       },
       "avg_survival_time": 22.5,
-      "avg_health_remaining": 0.78,
-      "total_hits_received": 0
+      "avg_health_remaining": 0.78
     },
     {
       "rank": 3,
@@ -45,8 +39,6 @@
       "elo": 1497.9,
       "wins": 49,
       "losses": 51,
-      "draws": 0,
-      "kills": 49,
       "deaths": {
         "shot_down": 0,
         "collision": 38,
@@ -54,8 +46,7 @@
         "timeout": 0
       },
       "avg_survival_time": 21.6,
-      "avg_health_remaining": 0.48,
-      "total_hits_received": 0
+      "avg_health_remaining": 0.48
     },
     {
       "rank": 4,
@@ -63,8 +54,6 @@
       "elo": 1487.8,
       "wins": 42,
       "losses": 58,
-      "draws": 0,
-      "kills": 42,
       "deaths": {
         "shot_down": 0,
         "collision": 1,
@@ -72,8 +61,7 @@
         "timeout": 0
       },
       "avg_survival_time": 21.5,
-      "avg_health_remaining": 0.42,
-      "total_hits_received": 0
+      "avg_health_remaining": 0.42
     },
     {
       "rank": 5,
@@ -81,8 +69,6 @@
       "elo": 1485.9,
       "wins": 40,
       "losses": 60,
-      "draws": 0,
-      "kills": 40,
       "deaths": {
         "shot_down": 0,
         "collision": 2,
@@ -90,8 +76,7 @@
         "timeout": 0
       },
       "avg_survival_time": 22.0,
-      "avg_health_remaining": 0.4,
-      "total_hits_received": 0
+      "avg_health_remaining": 0.4
     },
     {
       "rank": 6,
@@ -99,8 +84,6 @@
       "elo": 1440.3,
       "wins": 9,
       "losses": 91,
-      "draws": 0,
-      "kills": 9,
       "deaths": {
         "shot_down": 0,
         "collision": 91,
@@ -108,8 +91,7 @@
         "timeout": 0
       },
       "avg_survival_time": 16.8,
-      "avg_health_remaining": 0.09,
-      "total_hits_received": 0
+      "avg_health_remaining": 0.09
     }
   ],
   "recent_matches": [
@@ -117,106 +99,91 @@
       "player_a": "group00_rl_ppo",
       "player_b": "group01_aggressive",
       "wins_a": 19,
-      "wins_b": 1,
-      "draws": 0
+      "wins_b": 1
     },
     {
       "player_a": "group00_rl_ppo",
       "player_b": "group02_evasive",
       "wins_a": 20,
-      "wins_b": 0,
-      "draws": 0
+      "wins_b": 0
     },
     {
       "player_a": "group00_rl_ppo",
       "player_b": "group03_circler",
       "wins_a": 9,
-      "wins_b": 11,
-      "draws": 0
+      "wins_b": 11
     },
     {
       "player_a": "group00_rl_ppo",
       "player_b": "group04_pn",
       "wins_a": 11,
-      "wins_b": 9,
-      "draws": 0
+      "wins_b": 9
     },
     {
       "player_a": "group00_rl_ppo",
       "player_b": "group05_apf",
       "wins_a": 19,
-      "wins_b": 1,
-      "draws": 0
+      "wins_b": 1
     },
     {
       "player_a": "group01_aggressive",
       "player_b": "group02_evasive",
       "wins_a": 18,
-      "wins_b": 2,
-      "draws": 0
+      "wins_b": 2
     },
     {
       "player_a": "group01_aggressive",
       "player_b": "group03_circler",
       "wins_a": 8,
-      "wins_b": 12,
-      "draws": 0
+      "wins_b": 12
     },
     {
       "player_a": "group01_aggressive",
       "player_b": "group04_pn",
       "wins_a": 2,
-      "wins_b": 18,
-      "draws": 0
+      "wins_b": 18
     },
     {
       "player_a": "group01_aggressive",
       "player_b": "group05_apf",
       "wins_a": 13,
-      "wins_b": 7,
-      "draws": 0
+      "wins_b": 7
     },
     {
       "player_a": "group02_evasive",
       "player_b": "group03_circler",
       "wins_a": 3,
-      "wins_b": 17,
-      "draws": 0
+      "wins_b": 17
     },
     {
       "player_a": "group02_evasive",
       "player_b": "group04_pn",
       "wins_a": 2,
-      "wins_b": 18,
-      "draws": 0
+      "wins_b": 18
     },
     {
       "player_a": "group02_evasive",
       "player_b": "group05_apf",
       "wins_a": 2,
-      "wins_b": 18,
-      "draws": 0
+      "wins_b": 18
     },
     {
       "player_a": "group03_circler",
       "player_b": "group04_pn",
       "wins_a": 1,
-      "wins_b": 19,
-      "draws": 0
+      "wins_b": 19
     },
     {
       "player_a": "group03_circler",
       "player_b": "group05_apf",
       "wins_a": 8,
-      "wins_b": 12,
-      "draws": 0
+      "wins_b": 12
     },
     {
       "player_a": "group04_pn",
       "player_b": "group05_apf",
       "wins_a": 18,
-      "wins_b": 2,
-      "draws": 0
+      "wins_b": 2
     }
   ]
 }

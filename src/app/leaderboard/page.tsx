@@ -7,8 +7,6 @@ import {
   Swords,
   Clock,
   Users,
-  Crosshair,
-  Shield,
   ChevronDown,
   ChevronUp,
 } from "lucide-react";
@@ -27,12 +25,9 @@ interface Ranking {
   elo: number;
   wins?: number;
   losses?: number;
-  draws?: number;
-  kills?: number;
   deaths?: Deaths;
   avg_survival_time?: number;
   avg_health_remaining?: number;
-  total_hits_received?: number;
 }
 
 interface RecentMatch {
@@ -40,7 +35,6 @@ interface RecentMatch {
   player_b: string;
   wins_a: number;
   wins_b: number;
-  draws: number;
 }
 
 interface LeaderboardData {
@@ -122,31 +116,8 @@ function DeathBar({ deaths }: { deaths: Deaths }) {
 }
 
 function AgentDetails({ r }: { r: Ranking }) {
-  const totalDeaths = r.deaths
-    ? r.deaths.shot_down +
-      r.deaths.collision +
-      r.deaths.out_of_bounds +
-      r.deaths.timeout
-    : 0;
-
   return (
-    <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 px-6 py-4 bg-bg-dark-elevated/30">
-      <div>
-        <p className="font-mono text-[9px] text-text-tertiary tracking-widest uppercase mb-1">
-          Kills
-        </p>
-        <p className="font-mono text-sm text-green-400 font-medium">
-          {r.kills ?? 0}
-        </p>
-      </div>
-      <div>
-        <p className="font-mono text-[9px] text-text-tertiary tracking-widest uppercase mb-1">
-          Deaths
-        </p>
-        <p className="font-mono text-sm text-red-400 font-medium">
-          {totalDeaths}
-        </p>
-      </div>
+    <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 px-6 py-4 bg-bg-dark-elevated/30">
       <div>
         <p className="font-mono text-[9px] text-text-tertiary tracking-widest uppercase mb-1">
           Avg Survival
@@ -163,8 +134,18 @@ function AgentDetails({ r }: { r: Ranking }) {
           {((r.avg_health_remaining ?? 0) * 100).toFixed(0)}%
         </p>
       </div>
+      <div>
+        <p className="font-mono text-[9px] text-text-tertiary tracking-widest uppercase mb-1">
+          Win Rate
+        </p>
+        <p className="font-mono text-sm text-accent font-medium">
+          {r.wins !== undefined && r.losses !== undefined
+            ? ((r.wins / Math.max(r.wins + r.losses, 1)) * 100).toFixed(0)
+            : 0}%
+        </p>
+      </div>
       {r.deaths && (
-        <div className="col-span-2 sm:col-span-4">
+        <div className="col-span-2 sm:col-span-3">
           <p className="font-mono text-[9px] text-text-tertiary tracking-widest uppercase mb-1.5">
             Death Causes
           </p>
@@ -325,7 +306,7 @@ export default function LeaderboardPage() {
                 ) : (
                   <div>
                     {/* Table header */}
-                    <div className="grid grid-cols-[3rem_1fr_4rem_3rem_3rem_3rem_4rem_4rem_1.5rem] sm:grid-cols-[3rem_1fr_4rem_3rem_3rem_3rem_4rem_4rem_1.5rem] items-center border-b border-border-dark px-6 py-3 gap-2">
+                    <div className="grid grid-cols-[3rem_1fr_4rem_3rem_3rem_1.5rem] sm:grid-cols-[3rem_1fr_4rem_3rem_3rem_1.5rem] items-center border-b border-border-dark px-6 py-3 gap-2">
                       <span className="font-mono text-[10px] text-text-tertiary tracking-[0.15em] uppercase">
                         #
                       </span>
@@ -341,34 +322,19 @@ export default function LeaderboardPage() {
                       <span className="font-mono text-[10px] text-text-tertiary tracking-[0.15em] uppercase text-right hidden sm:block">
                         L
                       </span>
-                      <span className="font-mono text-[10px] text-text-tertiary tracking-[0.15em] uppercase text-right hidden sm:block">
-                        D
-                      </span>
-                      <span className="font-mono text-[10px] text-text-tertiary tracking-[0.15em] uppercase text-right hidden sm:block">
-                        <Crosshair size={10} className="inline" /> Kills
-                      </span>
-                      <span className="font-mono text-[10px] text-text-tertiary tracking-[0.15em] uppercase text-right hidden sm:block">
-                        <Shield size={10} className="inline" /> HP
-                      </span>
                       <span />
                     </div>
 
                     {/* Rows */}
                     {data.rankings.map((r, i) => {
                       const isExpanded = expandedAgent === r.name;
-                      const totalDeaths = r.deaths
-                        ? r.deaths.shot_down +
-                          r.deaths.collision +
-                          r.deaths.out_of_bounds +
-                          r.deaths.timeout
-                        : 0;
                       return (
                         <div key={r.name}>
                           <button
                             onClick={() =>
                               setExpandedAgent(isExpanded ? null : r.name)
                             }
-                            className={`w-full grid grid-cols-[3rem_1fr_4rem_3rem_3rem_3rem_4rem_4rem_1.5rem] sm:grid-cols-[3rem_1fr_4rem_3rem_3rem_3rem_4rem_4rem_1.5rem] items-center px-6 py-4 gap-2 border-b border-border-dark/50 transition-colors hover:bg-bg-dark-elevated/50 cursor-pointer text-left ${
+                            className={`w-full grid grid-cols-[3rem_1fr_4rem_3rem_3rem_1.5rem] sm:grid-cols-[3rem_1fr_4rem_3rem_3rem_1.5rem] items-center px-6 py-4 gap-2 border-b border-border-dark/50 transition-colors hover:bg-bg-dark-elevated/50 cursor-pointer text-left ${
                               i < 3 ? "bg-accent/[0.03]" : ""
                             }`}
                           >
@@ -384,16 +350,6 @@ export default function LeaderboardPage() {
                             </span>
                             <span className="font-mono text-sm text-red-400 text-right hidden sm:block">
                               {r.losses ?? "--"}
-                            </span>
-                            <span className="font-mono text-sm text-text-tertiary text-right hidden sm:block">
-                              {r.draws ?? "--"}
-                            </span>
-                            <span className="font-mono text-sm text-text-secondary text-right hidden sm:block">
-                              {r.kills ?? 0}
-                            </span>
-                            <span className="font-mono text-sm text-text-secondary text-right hidden sm:block">
-                              {((r.avg_health_remaining ?? 0) * 100).toFixed(0)}
-                              %
                             </span>
                             <span className="text-text-tertiary">
                               {isExpanded ? (
@@ -482,11 +438,6 @@ export default function LeaderboardPage() {
                             >
                               {m.wins_b}
                             </span>
-                            {m.draws > 0 && (
-                              <span className="font-mono text-[10px] text-text-tertiary">
-                                ({m.draws}D)
-                              </span>
-                            )}
                           </div>
                           <span
                             className={`font-display text-sm font-medium flex-1 ${
