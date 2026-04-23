@@ -10,7 +10,7 @@
       "approach": "rl",
       "description": "Instructor agent trained by A. Louette. Implementation withheld.",
       "author": "A. Louette",
-      "elo": 1597.8,
+      "elo": 2150.5,
       "games": 70,
       "wins": 70,
       "losses": 0,
@@ -100,7 +100,8 @@
           "win_rate": 1.0,
           "avg_damage_dealt": 0.323
         }
-      ]
+      ],
+      "elo_stderr": 139.6
     },
     {
       "rank": 2,
@@ -109,7 +110,7 @@
       "approach": "heuristic",
       "description": "Evasive agent with BFM-style avoidance.",
       "author": "A. Louette",
-      "elo": 1546.1,
+      "elo": 1670.6,
       "games": 70,
       "wins": 52,
       "losses": 18,
@@ -199,7 +200,8 @@
           "win_rate": 0.0,
           "avg_damage_dealt": 0.0
         }
-      ]
+      ],
+      "elo_stderr": 59.9
     },
     {
       "rank": 3,
@@ -208,7 +210,7 @@
       "approach": "heuristic",
       "description": "Pursuit agent with BFM-style approach.",
       "author": "A. Louette",
-      "elo": 1494.8,
+      "elo": 1444.5,
       "games": 70,
       "wins": 34,
       "losses": 36,
@@ -298,7 +300,8 @@
           "win_rate": 0.0,
           "avg_damage_dealt": 0.0
         }
-      ]
+      ],
+      "elo_stderr": 47.0
     },
     {
       "rank": 4,
@@ -307,7 +310,7 @@
       "approach": "heuristic",
       "description": "Circling agent with BFM-style orbit.",
       "author": "A. Louette",
-      "elo": 1486.3,
+      "elo": 1402.0,
       "games": 70,
       "wins": 30,
       "losses": 40,
@@ -397,7 +400,8 @@
           "win_rate": 0.0,
           "avg_damage_dealt": 0.0
         }
-      ]
+      ],
+      "elo_stderr": 46.5
     },
     {
       "rank": 5,
@@ -406,7 +410,7 @@
       "approach": "heuristic",
       "description": "Pure-survival agent: orbits the dome center, ignores the opponent.",
       "author": "A. Louette",
-      "elo": 1478.1,
+      "elo": 1359.8,
       "games": 70,
       "wins": 26,
       "losses": 44,
@@ -496,7 +500,8 @@
           "win_rate": 0.0,
           "avg_damage_dealt": 0.0
         }
-      ]
+      ],
+      "elo_stderr": 46.6
     },
     {
       "rank": 6,
@@ -505,7 +510,7 @@
       "approach": "heuristic",
       "description": "Artificial Potential Fields agent with offset approach.",
       "author": "A. Louette",
-      "elo": 1466.7,
+      "elo": 1327.8,
       "games": 70,
       "wins": 23,
       "losses": 47,
@@ -595,7 +600,8 @@
           "win_rate": 0.0,
           "avg_damage_dealt": 0.0
         }
-      ]
+      ],
+      "elo_stderr": 47.1
     },
     {
       "rank": 7,
@@ -604,7 +610,7 @@
       "approach": "heuristic",
       "description": "Proportional Navigation agent with offset approach.",
       "author": "A. Louette",
-      "elo": 1466.6,
+      "elo": 1327.8,
       "games": 70,
       "wins": 23,
       "losses": 47,
@@ -694,7 +700,8 @@
           "win_rate": 0.0,
           "avg_damage_dealt": 0.0
         }
-      ]
+      ],
+      "elo_stderr": 47.1
     },
     {
       "rank": 8,
@@ -703,7 +710,7 @@
       "approach": "heuristic",
       "description": "Active-pursuit agent designed to land shot-downs.",
       "author": "A. Louette",
-      "elo": 1463.6,
+      "elo": 1317.0,
       "games": 70,
       "wins": 22,
       "losses": 48,
@@ -793,7 +800,8 @@
           "win_rate": 0.0,
           "avg_damage_dealt": 0.0
         }
-      ]
+      ],
+      "elo_stderr": 47.4
     }
   ],
   "matchup_matrix": {
@@ -1347,5 +1355,6 @@
       "mean_reward_a": -11203.0,
       "mean_reward_b": 25879.8
     }
-  ]
+  ],
+  "elo_method": "bradley_terry_map_sigma300"
 }
