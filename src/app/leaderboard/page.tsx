@@ -753,7 +753,18 @@ export default function LeaderboardPage() {
                     <code className="font-mono text-xs text-accent bg-accent/10 px-1.5 py-0.5">
                       groupXX_name.py
                     </code>{" "}
-                    files.
+                    files. Your{" "}
+                    <code className="font-mono text-xs text-accent bg-accent/10 px-1.5 py-0.5">
+                      .zip
+                    </code>{" "}
+                    must load in the pinned evaluation environment — see{" "}
+                    <code className="font-mono text-xs text-accent bg-accent/10 px-1.5 py-0.5">
+                      requirements.txt
+                    </code>{" "}
+                    in the student repo and re-export your model from a venv
+                    matching it before submitting (a one-line{" "}
+                    <code className="font-mono text-xs">PPO.load().save()</code>{" "}
+                    is enough; no retraining needed).
                   </li>
                 </ul>
               </div>
