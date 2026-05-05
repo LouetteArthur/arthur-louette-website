@@ -1,7 +1,7 @@
 {
-  "last_updated": "2026-04-27T15:35:50.397909+00:00",
-  "total_matches": 36,
-  "total_games": 360,
+  "last_updated": "2026-05-05T07:43:55.761987+00:00",
+  "total_matches": 45,
+  "total_games": 450,
   "rankings": [
     {
       "rank": 1,
@@ -10,25 +10,25 @@
       "approach": "rl",
       "description": "Instructor agent trained by A. Louette. Implementation withheld.",
       "author": "A. Louette",
-      "elo": 1972.3,
-      "games": 80,
-      "wins": 76,
-      "losses": 4,
+      "elo": 2108.8,
+      "games": 90,
+      "wins": 88,
+      "losses": 2,
       "draws": 0,
       "kills": 0,
       "kill_rate": 0.0,
-      "win_rate": 0.95,
+      "win_rate": 0.978,
       "deaths": {
         "shot_down": 0,
-        "collision": 8,
+        "collision": 13,
         "out_of_bounds": 0,
-        "timeout": 0,
-        "survived": 72
+        "timeout": 3,
+        "survived": 74
       },
-      "avg_health_remaining": 0.9,
-      "avg_damage_dealt": 0.15,
-      "avg_damage_taken": 0.0,
-      "avg_survival_time": 21.7,
+      "avg_health_remaining": 0.855,
+      "avg_damage_dealt": 0.098,
+      "avg_damage_taken": 0.001,
+      "avg_survival_time": 23.4,
       "per_opponent": [
         {
           "opponent": "heuristic_aggressive",
@@ -38,7 +38,7 @@
           "kills": 0,
           "kill_rate": 0.0,
           "win_rate": 1.0,
-          "avg_damage_dealt": 0.13
+          "avg_damage_dealt": 0.119
         },
         {
           "opponent": "heuristic_apf",
@@ -48,7 +48,7 @@
           "kills": 0,
           "kill_rate": 0.0,
           "win_rate": 1.0,
-          "avg_damage_dealt": 0.196
+          "avg_damage_dealt": 0.11
         },
         {
           "opponent": "heuristic_circler",
@@ -58,7 +58,7 @@
           "kills": 0,
           "kill_rate": 0.0,
           "win_rate": 1.0,
-          "avg_damage_dealt": 0.14
+          "avg_damage_dealt": 0.189
         },
         {
           "opponent": "heuristic_evasive",
@@ -68,7 +68,7 @@
           "kills": 0,
           "kill_rate": 0.0,
           "win_rate": 1.0,
-          "avg_damage_dealt": 0.2
+          "avg_damage_dealt": 0.079
         },
         {
           "opponent": "heuristic_hunter",
@@ -78,7 +78,7 @@
           "kills": 0,
           "kill_rate": 0.0,
           "win_rate": 1.0,
-          "avg_damage_dealt": 0.246
+          "avg_damage_dealt": 0.168
         },
         {
           "opponent": "heuristic_pn",
@@ -88,7 +88,7 @@
           "kills": 0,
           "kill_rate": 0.0,
           "win_rate": 1.0,
-          "avg_damage_dealt": 0.169
+          "avg_damage_dealt": 0.097
         },
         {
           "opponent": "heuristic_survivor",
@@ -98,66 +98,76 @@
           "kills": 0,
           "kill_rate": 0.0,
           "win_rate": 1.0,
-          "avg_damage_dealt": 0.089
+          "avg_damage_dealt": 0.068
         },
         {
-          "opponent": "group04",
+          "opponent": "group04_league",
           "games": 10,
-          "wins": 6,
-          "losses": 4,
+          "wins": 10,
+          "losses": 0,
           "kills": 0,
           "kill_rate": 0.0,
-          "win_rate": 0.6,
-          "avg_damage_dealt": 0.03
+          "win_rate": 1.0,
+          "avg_damage_dealt": 0.05
+        },
+        {
+          "opponent": "group06_ppo1",
+          "games": 10,
+          "wins": 8,
+          "losses": 2,
+          "kills": 0,
+          "kill_rate": 0.0,
+          "win_rate": 0.8,
+          "avg_damage_dealt": 0.002
         }
       ],
-      "elo_stderr": 81.0
+      "elo_stderr": 96.6
     },
     {
       "rank": 2,
-      "name": "group04",
-      "display_name": "Group 04",
+      "name": "group06_ppo1",
+      "display_name": "Group 06",
       "approach": "rl",
-      "description": "Group 04 dogfight tournament submission \u2014 League-PPO agent.",
-      "author": "group04",
-      "elo": 1764.1,
-      "games": 80,
-      "wins": 65,
-      "losses": 15,
+      "description": "",
+      "author": "group06",
+      "elo": 1761.8,
+      "games": 90,
+      "wins": 71,
+      "losses": 19,
       "draws": 0,
       "kills": 0,
       "kill_rate": 0.0,
-      "win_rate": 0.812,
+      "win_rate": 0.789,
       "deaths": {
         "shot_down": 0,
-        "collision": 17,
+        "collision": 23,
         "out_of_bounds": 0,
-        "timeout": 0,
-        "survived": 63
+        "timeout": 6,
+        "survived": 61
       },
-      "avg_health_remaining": 0.786,
-      "avg_damage_dealt": 0.0,
-      "avg_damage_taken": 0.004,
-      "avg_survival_time": 22.1,
+      "avg_health_remaining": 0.744,
+      "avg_damage_dealt": 0.007,
+      "avg_damage_taken": 0.0,
+      "avg_survival_time": 24.4,
       "per_opponent": [
         {
           "opponent": "heuristic_aggressive",
           "games": 10,
-          "wins": 9,
-          "losses": 1,
+          "wins": 8,
+          "losses": 2,
           "kills": 0,
           "kill_rate": 0.0,
-          "win_rate": 0.9,
+          "win_rate": 0.8,
           "avg_damage_dealt": 0.0
         },
         {
           "opponent": "heuristic_apf",
           "games": 10,
-          "wins": 9,
-          "losses": 1,
+          "wins": 8,
+          "losses": 2,
           "kills": 0,
           "kill_rate": 0.0,
-          "win_rate": 0.9,
+          "win_rate": 0.8,
           "avg_damage_dealt": 0.0
         },
         {
@@ -183,6 +193,16 @@
         {
           "opponent": "heuristic_hunter",
           "games": 10,
+          "wins": 8,
+          "losses": 2,
+          "kills": 0,
+          "kill_rate": 0.0,
+          "win_rate": 0.8,
+          "avg_damage_dealt": 0.0
+        },
+        {
+          "opponent": "heuristic_pn",
+          "games": 10,
           "wins": 10,
           "losses": 0,
           "kills": 0,
@@ -191,64 +211,184 @@
           "avg_damage_dealt": 0.0
         },
         {
-          "opponent": "heuristic_pn",
-          "games": 10,
-          "wins": 9,
-          "losses": 1,
-          "kills": 0,
-          "kill_rate": 0.0,
-          "win_rate": 0.9,
-          "avg_damage_dealt": 0.0
-        },
-        {
           "opponent": "heuristic_survivor",
           "games": 10,
-          "wins": 7,
-          "losses": 3,
+          "wins": 8,
+          "losses": 2,
           "kills": 0,
           "kill_rate": 0.0,
-          "win_rate": 0.7,
+          "win_rate": 0.8,
           "avg_damage_dealt": 0.0
         },
         {
           "opponent": "arthur_louette",
           "games": 10,
-          "wins": 4,
-          "losses": 6,
+          "wins": 2,
+          "losses": 8,
           "kills": 0,
           "kill_rate": 0.0,
-          "win_rate": 0.4,
-          "avg_damage_dealt": 0.002
+          "win_rate": 0.2,
+          "avg_damage_dealt": 0.0
+        },
+        {
+          "opponent": "group04_league",
+          "games": 10,
+          "wins": 10,
+          "losses": 0,
+          "kills": 0,
+          "kill_rate": 0.0,
+          "win_rate": 1.0,
+          "avg_damage_dealt": 0.06
         }
       ],
-      "elo_stderr": 58.1
+      "elo_stderr": 57.1
     },
     {
       "rank": 3,
+      "name": "group04_league",
+      "display_name": "Group 04",
+      "approach": "rl",
+      "description": "",
+      "author": "group04",
+      "elo": 1747.2,
+      "games": 90,
+      "wins": 70,
+      "losses": 20,
+      "draws": 0,
+      "kills": 0,
+      "kill_rate": 0.0,
+      "win_rate": 0.778,
+      "deaths": {
+        "shot_down": 0,
+        "collision": 13,
+        "out_of_bounds": 0,
+        "timeout": 7,
+        "survived": 70
+      },
+      "avg_health_remaining": 0.849,
+      "avg_damage_dealt": 0.001,
+      "avg_damage_taken": 0.012,
+      "avg_survival_time": 26.1,
+      "per_opponent": [
+        {
+          "opponent": "heuristic_aggressive",
+          "games": 10,
+          "wins": 10,
+          "losses": 0,
+          "kills": 0,
+          "kill_rate": 0.0,
+          "win_rate": 1.0,
+          "avg_damage_dealt": 0.0
+        },
+        {
+          "opponent": "heuristic_apf",
+          "games": 10,
+          "wins": 10,
+          "losses": 0,
+          "kills": 0,
+          "kill_rate": 0.0,
+          "win_rate": 1.0,
+          "avg_damage_dealt": 0.0
+        },
+        {
+          "opponent": "heuristic_circler",
+          "games": 10,
+          "wins": 10,
+          "losses": 0,
+          "kills": 0,
+          "kill_rate": 0.0,
+          "win_rate": 1.0,
+          "avg_damage_dealt": 0.0
+        },
+        {
+          "opponent": "heuristic_evasive",
+          "games": 10,
+          "wins": 10,
+          "losses": 0,
+          "kills": 0,
+          "kill_rate": 0.0,
+          "win_rate": 1.0,
+          "avg_damage_dealt": 0.0
+        },
+        {
+          "opponent": "heuristic_hunter",
+          "games": 10,
+          "wins": 10,
+          "losses": 0,
+          "kills": 0,
+          "kill_rate": 0.0,
+          "win_rate": 1.0,
+          "avg_damage_dealt": 0.0
+        },
+        {
+          "opponent": "heuristic_pn",
+          "games": 10,
+          "wins": 10,
+          "losses": 0,
+          "kills": 0,
+          "kill_rate": 0.0,
+          "win_rate": 1.0,
+          "avg_damage_dealt": 0.0
+        },
+        {
+          "opponent": "heuristic_survivor",
+          "games": 10,
+          "wins": 10,
+          "losses": 0,
+          "kills": 0,
+          "kill_rate": 0.0,
+          "win_rate": 1.0,
+          "avg_damage_dealt": 0.0
+        },
+        {
+          "opponent": "arthur_louette",
+          "games": 10,
+          "wins": 0,
+          "losses": 10,
+          "kills": 0,
+          "kill_rate": 0.0,
+          "win_rate": 0.0,
+          "avg_damage_dealt": 0.005
+        },
+        {
+          "opponent": "group06_ppo1",
+          "games": 10,
+          "wins": 0,
+          "losses": 10,
+          "kills": 0,
+          "kill_rate": 0.0,
+          "win_rate": 0.0,
+          "avg_damage_dealt": 0.002
+        }
+      ],
+      "elo_stderr": 56.2
+    },
+    {
+      "rank": 4,
       "name": "heuristic_evasive",
       "display_name": "Evasive",
       "approach": "heuristic",
       "description": "Evasive agent with BFM-style avoidance.",
       "author": "A. Louette",
-      "elo": 1525.0,
-      "games": 80,
-      "wins": 45,
-      "losses": 35,
+      "elo": 1444.8,
+      "games": 90,
+      "wins": 43,
+      "losses": 47,
       "draws": 0,
       "kills": 0,
       "kill_rate": 0.0,
-      "win_rate": 0.562,
+      "win_rate": 0.478,
       "deaths": {
         "shot_down": 0,
         "collision": 0,
-        "out_of_bounds": 35,
+        "out_of_bounds": 47,
         "timeout": 0,
-        "survived": 45
+        "survived": 43
       },
-      "avg_health_remaining": 0.562,
+      "avg_health_remaining": 0.478,
       "avg_damage_dealt": 0.0,
-      "avg_damage_taken": 0.025,
-      "avg_survival_time": 22.9,
+      "avg_damage_taken": 0.009,
+      "avg_survival_time": 23.3,
       "per_opponent": [
         {
           "opponent": "heuristic_aggressive",
@@ -263,31 +403,31 @@
         {
           "opponent": "heuristic_apf",
           "games": 10,
-          "wins": 9,
-          "losses": 1,
+          "wins": 8,
+          "losses": 2,
           "kills": 0,
           "kill_rate": 0.0,
-          "win_rate": 0.9,
+          "win_rate": 0.8,
           "avg_damage_dealt": 0.0
         },
         {
           "opponent": "heuristic_circler",
-          "games": 10,
-          "wins": 5,
-          "losses": 5,
-          "kills": 0,
-          "kill_rate": 0.0,
-          "win_rate": 0.5,
-          "avg_damage_dealt": 0.0
-        },
-        {
-          "opponent": "heuristic_hunter",
           "games": 10,
           "wins": 8,
           "losses": 2,
           "kills": 0,
           "kill_rate": 0.0,
           "win_rate": 0.8,
+          "avg_damage_dealt": 0.0
+        },
+        {
+          "opponent": "heuristic_hunter",
+          "games": 10,
+          "wins": 6,
+          "losses": 4,
+          "kills": 0,
+          "kill_rate": 0.0,
+          "win_rate": 0.6,
           "avg_damage_dealt": 0.0
         },
         {
@@ -303,11 +443,11 @@
         {
           "opponent": "heuristic_survivor",
           "games": 10,
-          "wins": 8,
-          "losses": 2,
+          "wins": 6,
+          "losses": 4,
           "kills": 0,
           "kill_rate": 0.0,
-          "win_rate": 0.8,
+          "win_rate": 0.6,
           "avg_damage_dealt": 0.0
         },
         {
@@ -321,7 +461,17 @@
           "avg_damage_dealt": 0.0
         },
         {
-          "opponent": "group04",
+          "opponent": "group04_league",
+          "games": 10,
+          "wins": 0,
+          "losses": 10,
+          "kills": 0,
+          "kill_rate": 0.0,
+          "win_rate": 0.0,
+          "avg_damage_dealt": 0.0
+        },
+        {
+          "opponent": "group06_ppo1",
           "games": 10,
           "wins": 0,
           "losses": 10,
@@ -331,33 +481,33 @@
           "avg_damage_dealt": 0.0
         }
       ],
-      "elo_stderr": 44.9
+      "elo_stderr": 43.1
     },
     {
-      "rank": 4,
+      "rank": 5,
       "name": "heuristic_aggressive",
       "display_name": "Aggressive",
       "approach": "heuristic",
       "description": "Pursuit agent with BFM-style approach.",
       "author": "A. Louette",
-      "elo": 1429.5,
-      "games": 80,
-      "wins": 35,
-      "losses": 45,
+      "elo": 1380.9,
+      "games": 90,
+      "wins": 36,
+      "losses": 54,
       "draws": 0,
       "kills": 0,
       "kill_rate": 0.0,
-      "win_rate": 0.438,
+      "win_rate": 0.4,
       "deaths": {
         "shot_down": 0,
         "collision": 0,
-        "out_of_bounds": 47,
+        "out_of_bounds": 56,
         "timeout": 0,
-        "survived": 33
+        "survived": 34
       },
-      "avg_health_remaining": 0.412,
+      "avg_health_remaining": 0.378,
       "avg_damage_dealt": 0.0,
-      "avg_damage_taken": 0.016,
+      "avg_damage_taken": 0.013,
       "avg_survival_time": 22.6,
       "per_opponent": [
         {
@@ -431,107 +581,7 @@
           "avg_damage_dealt": 0.0
         },
         {
-          "opponent": "group04",
-          "games": 10,
-          "wins": 1,
-          "losses": 9,
-          "kills": 0,
-          "kill_rate": 0.0,
-          "win_rate": 0.1,
-          "avg_damage_dealt": 0.0
-        }
-      ],
-      "elo_stderr": 43.3
-    },
-    {
-      "rank": 5,
-      "name": "heuristic_circler",
-      "display_name": "Circler",
-      "approach": "heuristic",
-      "description": "Circling agent with BFM-style orbit.",
-      "author": "A. Louette",
-      "elo": 1410.9,
-      "games": 80,
-      "wins": 33,
-      "losses": 47,
-      "draws": 0,
-      "kills": 0,
-      "kill_rate": 0.0,
-      "win_rate": 0.412,
-      "deaths": {
-        "shot_down": 0,
-        "collision": 0,
-        "out_of_bounds": 47,
-        "timeout": 0,
-        "survived": 33
-      },
-      "avg_health_remaining": 0.412,
-      "avg_damage_dealt": 0.0,
-      "avg_damage_taken": 0.017,
-      "avg_survival_time": 22.3,
-      "per_opponent": [
-        {
-          "opponent": "heuristic_aggressive",
-          "games": 10,
-          "wins": 3,
-          "losses": 7,
-          "kills": 0,
-          "kill_rate": 0.0,
-          "win_rate": 0.3,
-          "avg_damage_dealt": 0.0
-        },
-        {
-          "opponent": "heuristic_apf",
-          "games": 10,
-          "wins": 3,
-          "losses": 7,
-          "kills": 0,
-          "kill_rate": 0.0,
-          "win_rate": 0.3,
-          "avg_damage_dealt": 0.0
-        },
-        {
-          "opponent": "heuristic_evasive",
-          "games": 10,
-          "wins": 5,
-          "losses": 5,
-          "kills": 0,
-          "kill_rate": 0.0,
-          "win_rate": 0.5,
-          "avg_damage_dealt": 0.0
-        },
-        {
-          "opponent": "heuristic_hunter",
-          "games": 10,
-          "wins": 7,
-          "losses": 3,
-          "kills": 0,
-          "kill_rate": 0.0,
-          "win_rate": 0.7,
-          "avg_damage_dealt": 0.0
-        },
-        {
-          "opponent": "heuristic_pn",
-          "games": 10,
-          "wins": 5,
-          "losses": 5,
-          "kills": 0,
-          "kill_rate": 0.0,
-          "win_rate": 0.5,
-          "avg_damage_dealt": 0.0
-        },
-        {
-          "opponent": "heuristic_survivor",
-          "games": 10,
-          "wins": 7,
-          "losses": 3,
-          "kills": 0,
-          "kill_rate": 0.0,
-          "win_rate": 0.7,
-          "avg_damage_dealt": 0.0
-        },
-        {
-          "opponent": "arthur_louette",
+          "opponent": "group04_league",
           "games": 10,
           "wins": 0,
           "losses": 10,
@@ -541,17 +591,17 @@
           "avg_damage_dealt": 0.0
         },
         {
-          "opponent": "group04",
+          "opponent": "group06_ppo1",
           "games": 10,
-          "wins": 3,
-          "losses": 7,
+          "wins": 2,
+          "losses": 8,
           "kills": 0,
           "kill_rate": 0.0,
-          "win_rate": 0.3,
+          "win_rate": 0.2,
           "avg_damage_dealt": 0.0
         }
       ],
-      "elo_stderr": 43.2
+      "elo_stderr": 42.5
     },
     {
       "rank": 6,
@@ -560,25 +610,25 @@
       "approach": "heuristic",
       "description": "Pure-survival agent: orbits the dome center, ignores the opponent.",
       "author": "A. Louette",
-      "elo": 1373.5,
-      "games": 80,
-      "wins": 29,
-      "losses": 51,
+      "elo": 1335.6,
+      "games": 90,
+      "wins": 31,
+      "losses": 59,
       "draws": 0,
       "kills": 0,
       "kill_rate": 0.0,
-      "win_rate": 0.362,
+      "win_rate": 0.344,
       "deaths": {
         "shot_down": 0,
         "collision": 0,
-        "out_of_bounds": 51,
+        "out_of_bounds": 59,
         "timeout": 0,
-        "survived": 29
+        "survived": 31
       },
-      "avg_health_remaining": 0.362,
+      "avg_health_remaining": 0.344,
       "avg_damage_dealt": 0.0,
-      "avg_damage_taken": 0.011,
-      "avg_survival_time": 22.9,
+      "avg_damage_taken": 0.008,
+      "avg_survival_time": 22.8,
       "per_opponent": [
         {
           "opponent": "heuristic_aggressive",
@@ -588,226 +638,6 @@
           "kills": 0,
           "kill_rate": 0.0,
           "win_rate": 0.4,
-          "avg_damage_dealt": 0.0
-        },
-        {
-          "opponent": "heuristic_apf",
-          "games": 10,
-          "wins": 10,
-          "losses": 0,
-          "kills": 0,
-          "kill_rate": 0.0,
-          "win_rate": 1.0,
-          "avg_damage_dealt": 0.0
-        },
-        {
-          "opponent": "heuristic_circler",
-          "games": 10,
-          "wins": 3,
-          "losses": 7,
-          "kills": 0,
-          "kill_rate": 0.0,
-          "win_rate": 0.3,
-          "avg_damage_dealt": 0.0
-        },
-        {
-          "opponent": "heuristic_evasive",
-          "games": 10,
-          "wins": 2,
-          "losses": 8,
-          "kills": 0,
-          "kill_rate": 0.0,
-          "win_rate": 0.2,
-          "avg_damage_dealt": 0.0
-        },
-        {
-          "opponent": "heuristic_hunter",
-          "games": 10,
-          "wins": 5,
-          "losses": 5,
-          "kills": 0,
-          "kill_rate": 0.0,
-          "win_rate": 0.5,
-          "avg_damage_dealt": 0.0
-        },
-        {
-          "opponent": "heuristic_pn",
-          "games": 10,
-          "wins": 2,
-          "losses": 8,
-          "kills": 0,
-          "kill_rate": 0.0,
-          "win_rate": 0.2,
-          "avg_damage_dealt": 0.0
-        },
-        {
-          "opponent": "arthur_louette",
-          "games": 10,
-          "wins": 0,
-          "losses": 10,
-          "kills": 0,
-          "kill_rate": 0.0,
-          "win_rate": 0.0,
-          "avg_damage_dealt": 0.0
-        },
-        {
-          "opponent": "group04",
-          "games": 10,
-          "wins": 3,
-          "losses": 7,
-          "kills": 0,
-          "kill_rate": 0.0,
-          "win_rate": 0.3,
-          "avg_damage_dealt": 0.0
-        }
-      ],
-      "elo_stderr": 43.5
-    },
-    {
-      "rank": 7,
-      "name": "heuristic_pn",
-      "display_name": "Pn",
-      "approach": "heuristic",
-      "description": "Proportional Navigation agent with offset approach.",
-      "author": "A. Louette",
-      "elo": 1354.5,
-      "games": 80,
-      "wins": 27,
-      "losses": 53,
-      "draws": 0,
-      "kills": 0,
-      "kill_rate": 0.0,
-      "win_rate": 0.338,
-      "deaths": {
-        "shot_down": 0,
-        "collision": 0,
-        "out_of_bounds": 53,
-        "timeout": 0,
-        "survived": 27
-      },
-      "avg_health_remaining": 0.338,
-      "avg_damage_dealt": 0.0,
-      "avg_damage_taken": 0.021,
-      "avg_survival_time": 22.7,
-      "per_opponent": [
-        {
-          "opponent": "heuristic_aggressive",
-          "games": 10,
-          "wins": 4,
-          "losses": 6,
-          "kills": 0,
-          "kill_rate": 0.0,
-          "win_rate": 0.4,
-          "avg_damage_dealt": 0.0
-        },
-        {
-          "opponent": "heuristic_apf",
-          "games": 10,
-          "wins": 3,
-          "losses": 7,
-          "kills": 0,
-          "kill_rate": 0.0,
-          "win_rate": 0.3,
-          "avg_damage_dealt": 0.0
-        },
-        {
-          "opponent": "heuristic_circler",
-          "games": 10,
-          "wins": 5,
-          "losses": 5,
-          "kills": 0,
-          "kill_rate": 0.0,
-          "win_rate": 0.5,
-          "avg_damage_dealt": 0.0
-        },
-        {
-          "opponent": "heuristic_evasive",
-          "games": 10,
-          "wins": 1,
-          "losses": 9,
-          "kills": 0,
-          "kill_rate": 0.0,
-          "win_rate": 0.1,
-          "avg_damage_dealt": 0.0
-        },
-        {
-          "opponent": "heuristic_hunter",
-          "games": 10,
-          "wins": 5,
-          "losses": 5,
-          "kills": 0,
-          "kill_rate": 0.0,
-          "win_rate": 0.5,
-          "avg_damage_dealt": 0.0
-        },
-        {
-          "opponent": "heuristic_survivor",
-          "games": 10,
-          "wins": 8,
-          "losses": 2,
-          "kills": 0,
-          "kill_rate": 0.0,
-          "win_rate": 0.8,
-          "avg_damage_dealt": 0.0
-        },
-        {
-          "opponent": "arthur_louette",
-          "games": 10,
-          "wins": 0,
-          "losses": 10,
-          "kills": 0,
-          "kill_rate": 0.0,
-          "win_rate": 0.0,
-          "avg_damage_dealt": 0.0
-        },
-        {
-          "opponent": "group04",
-          "games": 10,
-          "wins": 1,
-          "losses": 9,
-          "kills": 0,
-          "kill_rate": 0.0,
-          "win_rate": 0.1,
-          "avg_damage_dealt": 0.0
-        }
-      ],
-      "elo_stderr": 43.9
-    },
-    {
-      "rank": 8,
-      "name": "heuristic_hunter",
-      "display_name": "Hunter",
-      "approach": "heuristic",
-      "description": "Active-pursuit agent designed to land shot-downs.",
-      "author": "A. Louette",
-      "elo": 1344.9,
-      "games": 80,
-      "wins": 26,
-      "losses": 54,
-      "draws": 0,
-      "kills": 0,
-      "kill_rate": 0.0,
-      "win_rate": 0.325,
-      "deaths": {
-        "shot_down": 0,
-        "collision": 0,
-        "out_of_bounds": 54,
-        "timeout": 0,
-        "survived": 26
-      },
-      "avg_health_remaining": 0.325,
-      "avg_damage_dealt": 0.0,
-      "avg_damage_taken": 0.031,
-      "avg_survival_time": 22.5,
-      "per_opponent": [
-        {
-          "opponent": "heuristic_aggressive",
-          "games": 10,
-          "wins": 5,
-          "losses": 5,
-          "kills": 0,
-          "kill_rate": 0.0,
-          "win_rate": 0.5,
           "avg_damage_dealt": 0.0
         },
         {
@@ -823,11 +653,121 @@
         {
           "opponent": "heuristic_circler",
           "games": 10,
+          "wins": 4,
+          "losses": 6,
+          "kills": 0,
+          "kill_rate": 0.0,
+          "win_rate": 0.4,
+          "avg_damage_dealt": 0.0
+        },
+        {
+          "opponent": "heuristic_evasive",
+          "games": 10,
+          "wins": 4,
+          "losses": 6,
+          "kills": 0,
+          "kill_rate": 0.0,
+          "win_rate": 0.4,
+          "avg_damage_dealt": 0.0
+        },
+        {
+          "opponent": "heuristic_hunter",
+          "games": 10,
+          "wins": 5,
+          "losses": 5,
+          "kills": 0,
+          "kill_rate": 0.0,
+          "win_rate": 0.5,
+          "avg_damage_dealt": 0.0
+        },
+        {
+          "opponent": "heuristic_pn",
+          "games": 10,
+          "wins": 6,
+          "losses": 4,
+          "kills": 0,
+          "kill_rate": 0.0,
+          "win_rate": 0.6,
+          "avg_damage_dealt": 0.0
+        },
+        {
+          "opponent": "arthur_louette",
+          "games": 10,
+          "wins": 0,
+          "losses": 10,
+          "kills": 0,
+          "kill_rate": 0.0,
+          "win_rate": 0.0,
+          "avg_damage_dealt": 0.0
+        },
+        {
+          "opponent": "group04_league",
+          "games": 10,
+          "wins": 0,
+          "losses": 10,
+          "kills": 0,
+          "kill_rate": 0.0,
+          "win_rate": 0.0,
+          "avg_damage_dealt": 0.0
+        },
+        {
+          "opponent": "group06_ppo1",
+          "games": 10,
+          "wins": 2,
+          "losses": 8,
+          "kills": 0,
+          "kill_rate": 0.0,
+          "win_rate": 0.2,
+          "avg_damage_dealt": 0.0
+        }
+      ],
+      "elo_stderr": 42.7
+    },
+    {
+      "rank": 7,
+      "name": "heuristic_circler",
+      "display_name": "Circler",
+      "approach": "heuristic",
+      "description": "Circling agent with BFM-style orbit.",
+      "author": "A. Louette",
+      "elo": 1335.6,
+      "games": 90,
+      "wins": 31,
+      "losses": 59,
+      "draws": 0,
+      "kills": 0,
+      "kill_rate": 0.0,
+      "win_rate": 0.344,
+      "deaths": {
+        "shot_down": 0,
+        "collision": 0,
+        "out_of_bounds": 59,
+        "timeout": 0,
+        "survived": 31
+      },
+      "avg_health_remaining": 0.344,
+      "avg_damage_dealt": 0.0,
+      "avg_damage_taken": 0.021,
+      "avg_survival_time": 22.3,
+      "per_opponent": [
+        {
+          "opponent": "heuristic_aggressive",
+          "games": 10,
           "wins": 3,
           "losses": 7,
           "kills": 0,
           "kill_rate": 0.0,
           "win_rate": 0.3,
+          "avg_damage_dealt": 0.0
+        },
+        {
+          "opponent": "heuristic_apf",
+          "games": 10,
+          "wins": 4,
+          "losses": 6,
+          "kills": 0,
+          "kill_rate": 0.0,
+          "win_rate": 0.4,
           "avg_damage_dealt": 0.0
         },
         {
@@ -841,13 +781,143 @@
           "avg_damage_dealt": 0.0
         },
         {
+          "opponent": "heuristic_hunter",
+          "games": 10,
+          "wins": 7,
+          "losses": 3,
+          "kills": 0,
+          "kill_rate": 0.0,
+          "win_rate": 0.7,
+          "avg_damage_dealt": 0.0
+        },
+        {
           "opponent": "heuristic_pn",
+          "games": 10,
+          "wins": 6,
+          "losses": 4,
+          "kills": 0,
+          "kill_rate": 0.0,
+          "win_rate": 0.6,
+          "avg_damage_dealt": 0.0
+        },
+        {
+          "opponent": "heuristic_survivor",
+          "games": 10,
+          "wins": 6,
+          "losses": 4,
+          "kills": 0,
+          "kill_rate": 0.0,
+          "win_rate": 0.6,
+          "avg_damage_dealt": 0.0
+        },
+        {
+          "opponent": "arthur_louette",
+          "games": 10,
+          "wins": 0,
+          "losses": 10,
+          "kills": 0,
+          "kill_rate": 0.0,
+          "win_rate": 0.0,
+          "avg_damage_dealt": 0.0
+        },
+        {
+          "opponent": "group04_league",
+          "games": 10,
+          "wins": 0,
+          "losses": 10,
+          "kills": 0,
+          "kill_rate": 0.0,
+          "win_rate": 0.0,
+          "avg_damage_dealt": 0.0
+        },
+        {
+          "opponent": "group06_ppo1",
+          "games": 10,
+          "wins": 3,
+          "losses": 7,
+          "kills": 0,
+          "kill_rate": 0.0,
+          "win_rate": 0.3,
+          "avg_damage_dealt": 0.0
+        }
+      ],
+      "elo_stderr": 42.7
+    },
+    {
+      "rank": 8,
+      "name": "heuristic_hunter",
+      "display_name": "Hunter",
+      "approach": "heuristic",
+      "description": "Active-pursuit agent designed to land shot-downs.",
+      "author": "A. Louette",
+      "elo": 1326.4,
+      "games": 90,
+      "wins": 30,
+      "losses": 60,
+      "draws": 0,
+      "kills": 0,
+      "kill_rate": 0.0,
+      "win_rate": 0.333,
+      "deaths": {
+        "shot_down": 0,
+        "collision": 0,
+        "out_of_bounds": 60,
+        "timeout": 0,
+        "survived": 30
+      },
+      "avg_health_remaining": 0.333,
+      "avg_damage_dealt": 0.0,
+      "avg_damage_taken": 0.019,
+      "avg_survival_time": 22.5,
+      "per_opponent": [
+        {
+          "opponent": "heuristic_aggressive",
           "games": 10,
           "wins": 5,
           "losses": 5,
           "kills": 0,
           "kill_rate": 0.0,
           "win_rate": 0.5,
+          "avg_damage_dealt": 0.0
+        },
+        {
+          "opponent": "heuristic_apf",
+          "games": 10,
+          "wins": 3,
+          "losses": 7,
+          "kills": 0,
+          "kill_rate": 0.0,
+          "win_rate": 0.3,
+          "avg_damage_dealt": 0.0
+        },
+        {
+          "opponent": "heuristic_circler",
+          "games": 10,
+          "wins": 3,
+          "losses": 7,
+          "kills": 0,
+          "kill_rate": 0.0,
+          "win_rate": 0.3,
+          "avg_damage_dealt": 0.0
+        },
+        {
+          "opponent": "heuristic_evasive",
+          "games": 10,
+          "wins": 4,
+          "losses": 6,
+          "kills": 0,
+          "kill_rate": 0.0,
+          "win_rate": 0.4,
+          "avg_damage_dealt": 0.0
+        },
+        {
+          "opponent": "heuristic_pn",
+          "games": 10,
+          "wins": 8,
+          "losses": 2,
+          "kills": 0,
+          "kill_rate": 0.0,
+          "win_rate": 0.8,
           "avg_damage_dealt": 0.0
         },
         {
@@ -871,7 +941,7 @@
           "avg_damage_dealt": 0.0
         },
         {
-          "opponent": "group04",
+          "opponent": "group04_league",
           "games": 10,
           "wins": 0,
           "losses": 10,
@@ -879,9 +949,19 @@
           "kill_rate": 0.0,
           "win_rate": 0.0,
           "avg_damage_dealt": 0.0
+        },
+        {
+          "opponent": "group06_ppo1",
+          "games": 10,
+          "wins": 2,
+          "losses": 8,
+          "kills": 0,
+          "kill_rate": 0.0,
+          "win_rate": 0.2,
+          "avg_damage_dealt": 0.0
         }
       ],
-      "elo_stderr": 44.1
+      "elo_stderr": 42.8
     },
     {
       "rank": 9,
@@ -890,10 +970,10 @@
       "approach": "heuristic",
       "description": "Artificial Potential Fields agent with offset approach.",
       "author": "A. Louette",
-      "elo": 1325.4,
-      "games": 80,
-      "wins": 24,
-      "losses": 56,
+      "elo": 1298.6,
+      "games": 90,
+      "wins": 27,
+      "losses": 63,
       "draws": 0,
       "kills": 0,
       "kill_rate": 0.0,
@@ -901,13 +981,13 @@
       "deaths": {
         "shot_down": 0,
         "collision": 0,
-        "out_of_bounds": 57,
+        "out_of_bounds": 63,
         "timeout": 0,
-        "survived": 23
+        "survived": 27
       },
-      "avg_health_remaining": 0.287,
+      "avg_health_remaining": 0.3,
       "avg_damage_dealt": 0.0,
-      "avg_damage_taken": 0.025,
+      "avg_damage_taken": 0.012,
       "avg_survival_time": 22.3,
       "per_opponent": [
         {
@@ -923,11 +1003,141 @@
         {
           "opponent": "heuristic_circler",
           "games": 10,
+          "wins": 6,
+          "losses": 4,
+          "kills": 0,
+          "kill_rate": 0.0,
+          "win_rate": 0.6,
+          "avg_damage_dealt": 0.0
+        },
+        {
+          "opponent": "heuristic_evasive",
+          "games": 10,
+          "wins": 2,
+          "losses": 8,
+          "kills": 0,
+          "kill_rate": 0.0,
+          "win_rate": 0.2,
+          "avg_damage_dealt": 0.0
+        },
+        {
+          "opponent": "heuristic_hunter",
+          "games": 10,
           "wins": 7,
           "losses": 3,
           "kills": 0,
           "kill_rate": 0.0,
           "win_rate": 0.7,
+          "avg_damage_dealt": 0.0
+        },
+        {
+          "opponent": "heuristic_pn",
+          "games": 10,
+          "wins": 2,
+          "losses": 8,
+          "kills": 0,
+          "kill_rate": 0.0,
+          "win_rate": 0.2,
+          "avg_damage_dealt": 0.0
+        },
+        {
+          "opponent": "heuristic_survivor",
+          "games": 10,
+          "wins": 4,
+          "losses": 6,
+          "kills": 0,
+          "kill_rate": 0.0,
+          "win_rate": 0.4,
+          "avg_damage_dealt": 0.0
+        },
+        {
+          "opponent": "arthur_louette",
+          "games": 10,
+          "wins": 0,
+          "losses": 10,
+          "kills": 0,
+          "kill_rate": 0.0,
+          "win_rate": 0.0,
+          "avg_damage_dealt": 0.0
+        },
+        {
+          "opponent": "group04_league",
+          "games": 10,
+          "wins": 0,
+          "losses": 10,
+          "kills": 0,
+          "kill_rate": 0.0,
+          "win_rate": 0.0,
+          "avg_damage_dealt": 0.0
+        },
+        {
+          "opponent": "group06_ppo1",
+          "games": 10,
+          "wins": 2,
+          "losses": 8,
+          "kills": 0,
+          "kill_rate": 0.0,
+          "win_rate": 0.2,
+          "avg_damage_dealt": 0.0
+        }
+      ],
+      "elo_stderr": 43.4
+    },
+    {
+      "rank": 10,
+      "name": "heuristic_pn",
+      "display_name": "Pn",
+      "approach": "heuristic",
+      "description": "Proportional Navigation agent with offset approach.",
+      "author": "A. Louette",
+      "elo": 1260.4,
+      "games": 90,
+      "wins": 23,
+      "losses": 67,
+      "draws": 0,
+      "kills": 0,
+      "kill_rate": 0.0,
+      "win_rate": 0.256,
+      "deaths": {
+        "shot_down": 0,
+        "collision": 0,
+        "out_of_bounds": 67,
+        "timeout": 0,
+        "survived": 23
+      },
+      "avg_health_remaining": 0.256,
+      "avg_damage_dealt": 0.0,
+      "avg_damage_taken": 0.011,
+      "avg_survival_time": 22.8,
+      "per_opponent": [
+        {
+          "opponent": "heuristic_aggressive",
+          "games": 10,
+          "wins": 4,
+          "losses": 6,
+          "kills": 0,
+          "kill_rate": 0.0,
+          "win_rate": 0.4,
+          "avg_damage_dealt": 0.0
+        },
+        {
+          "opponent": "heuristic_apf",
+          "games": 10,
+          "wins": 8,
+          "losses": 2,
+          "kills": 0,
+          "kill_rate": 0.0,
+          "win_rate": 0.8,
+          "avg_damage_dealt": 0.0
+        },
+        {
+          "opponent": "heuristic_circler",
+          "games": 10,
+          "wins": 4,
+          "losses": 6,
+          "kills": 0,
+          "kill_rate": 0.0,
+          "win_rate": 0.4,
           "avg_damage_dealt": 0.0
         },
         {
@@ -943,31 +1153,21 @@
         {
           "opponent": "heuristic_hunter",
           "games": 10,
-          "wins": 4,
-          "losses": 6,
+          "wins": 2,
+          "losses": 8,
           "kills": 0,
           "kill_rate": 0.0,
-          "win_rate": 0.4,
-          "avg_damage_dealt": 0.0
-        },
-        {
-          "opponent": "heuristic_pn",
-          "games": 10,
-          "wins": 7,
-          "losses": 3,
-          "kills": 0,
-          "kill_rate": 0.0,
-          "win_rate": 0.7,
+          "win_rate": 0.2,
           "avg_damage_dealt": 0.0
         },
         {
           "opponent": "heuristic_survivor",
           "games": 10,
-          "wins": 0,
-          "losses": 10,
+          "wins": 4,
+          "losses": 6,
           "kills": 0,
           "kill_rate": 0.0,
-          "win_rate": 0.0,
+          "win_rate": 0.4,
           "avg_damage_dealt": 0.0
         },
         {
@@ -981,17 +1181,27 @@
           "avg_damage_dealt": 0.0
         },
         {
-          "opponent": "group04",
+          "opponent": "group04_league",
           "games": 10,
-          "wins": 1,
-          "losses": 9,
+          "wins": 0,
+          "losses": 10,
           "kills": 0,
           "kill_rate": 0.0,
-          "win_rate": 0.1,
+          "win_rate": 0.0,
+          "avg_damage_dealt": 0.0
+        },
+        {
+          "opponent": "group06_ppo1",
+          "games": 10,
+          "wins": 0,
+          "losses": 10,
+          "kills": 0,
+          "kill_rate": 0.0,
+          "win_rate": 0.0,
           "avg_damage_dealt": 0.0
         }
       ],
-      "elo_stderr": 44.6
+      "elo_stderr": 44.5
     }
   ],
   "matchup_matrix": {
@@ -1031,8 +1241,13 @@
         "kill_rate": 0.0,
         "games": 10
       },
-      "group04": {
-        "win_rate": 0.1,
+      "group04_league": {
+        "win_rate": 0.0,
+        "kill_rate": 0.0,
+        "games": 10
+      },
+      "group06_ppo1": {
+        "win_rate": 0.2,
         "kill_rate": 0.0,
         "games": 10
       }
@@ -1044,27 +1259,27 @@
         "games": 10
       },
       "heuristic_circler": {
-        "win_rate": 0.7,
+        "win_rate": 0.6,
         "kill_rate": 0.0,
         "games": 10
       },
       "heuristic_evasive": {
-        "win_rate": 0.1,
+        "win_rate": 0.2,
         "kill_rate": 0.0,
         "games": 10
       },
       "heuristic_hunter": {
-        "win_rate": 0.4,
-        "kill_rate": 0.0,
-        "games": 10
-      },
-      "heuristic_pn": {
         "win_rate": 0.7,
         "kill_rate": 0.0,
         "games": 10
       },
+      "heuristic_pn": {
+        "win_rate": 0.2,
+        "kill_rate": 0.0,
+        "games": 10
+      },
       "heuristic_survivor": {
-        "win_rate": 0.0,
+        "win_rate": 0.4,
         "kill_rate": 0.0,
         "games": 10
       },
@@ -1073,8 +1288,13 @@
         "kill_rate": 0.0,
         "games": 10
       },
-      "group04": {
-        "win_rate": 0.1,
+      "group04_league": {
+        "win_rate": 0.0,
+        "kill_rate": 0.0,
+        "games": 10
+      },
+      "group06_ppo1": {
+        "win_rate": 0.2,
         "kill_rate": 0.0,
         "games": 10
       }
@@ -1086,12 +1306,12 @@
         "games": 10
       },
       "heuristic_apf": {
-        "win_rate": 0.3,
+        "win_rate": 0.4,
         "kill_rate": 0.0,
         "games": 10
       },
       "heuristic_evasive": {
-        "win_rate": 0.5,
+        "win_rate": 0.2,
         "kill_rate": 0.0,
         "games": 10
       },
@@ -1101,12 +1321,12 @@
         "games": 10
       },
       "heuristic_pn": {
-        "win_rate": 0.5,
+        "win_rate": 0.6,
         "kill_rate": 0.0,
         "games": 10
       },
       "heuristic_survivor": {
-        "win_rate": 0.7,
+        "win_rate": 0.6,
         "kill_rate": 0.0,
         "games": 10
       },
@@ -1115,7 +1335,12 @@
         "kill_rate": 0.0,
         "games": 10
       },
-      "group04": {
+      "group04_league": {
+        "win_rate": 0.0,
+        "kill_rate": 0.0,
+        "games": 10
+      },
+      "group06_ppo1": {
         "win_rate": 0.3,
         "kill_rate": 0.0,
         "games": 10
@@ -1128,17 +1353,17 @@
         "games": 10
       },
       "heuristic_apf": {
-        "win_rate": 0.9,
+        "win_rate": 0.8,
         "kill_rate": 0.0,
         "games": 10
       },
       "heuristic_circler": {
-        "win_rate": 0.5,
+        "win_rate": 0.8,
         "kill_rate": 0.0,
         "games": 10
       },
       "heuristic_hunter": {
-        "win_rate": 0.8,
+        "win_rate": 0.6,
         "kill_rate": 0.0,
         "games": 10
       },
@@ -1148,7 +1373,7 @@
         "games": 10
       },
       "heuristic_survivor": {
-        "win_rate": 0.8,
+        "win_rate": 0.6,
         "kill_rate": 0.0,
         "games": 10
       },
@@ -1157,7 +1382,12 @@
         "kill_rate": 0.0,
         "games": 10
       },
-      "group04": {
+      "group04_league": {
+        "win_rate": 0.0,
+        "kill_rate": 0.0,
+        "games": 10
+      },
+      "group06_ppo1": {
         "win_rate": 0.0,
         "kill_rate": 0.0,
         "games": 10
@@ -1170,7 +1400,7 @@
         "games": 10
       },
       "heuristic_apf": {
-        "win_rate": 0.6,
+        "win_rate": 0.3,
         "kill_rate": 0.0,
         "games": 10
       },
@@ -1180,12 +1410,12 @@
         "games": 10
       },
       "heuristic_evasive": {
-        "win_rate": 0.2,
+        "win_rate": 0.4,
         "kill_rate": 0.0,
         "games": 10
       },
       "heuristic_pn": {
-        "win_rate": 0.5,
+        "win_rate": 0.8,
         "kill_rate": 0.0,
         "games": 10
       },
@@ -1199,8 +1429,13 @@
         "kill_rate": 0.0,
         "games": 10
       },
-      "group04": {
+      "group04_league": {
         "win_rate": 0.0,
+        "kill_rate": 0.0,
+        "games": 10
+      },
+      "group06_ppo1": {
+        "win_rate": 0.2,
         "kill_rate": 0.0,
         "games": 10
       }
@@ -1212,12 +1447,12 @@
         "games": 10
       },
       "heuristic_apf": {
-        "win_rate": 0.3,
+        "win_rate": 0.8,
         "kill_rate": 0.0,
         "games": 10
       },
       "heuristic_circler": {
-        "win_rate": 0.5,
+        "win_rate": 0.4,
         "kill_rate": 0.0,
         "games": 10
       },
@@ -1227,12 +1462,12 @@
         "games": 10
       },
       "heuristic_hunter": {
-        "win_rate": 0.5,
+        "win_rate": 0.2,
         "kill_rate": 0.0,
         "games": 10
       },
       "heuristic_survivor": {
-        "win_rate": 0.8,
+        "win_rate": 0.4,
         "kill_rate": 0.0,
         "games": 10
       },
@@ -1241,8 +1476,13 @@
         "kill_rate": 0.0,
         "games": 10
       },
-      "group04": {
-        "win_rate": 0.1,
+      "group04_league": {
+        "win_rate": 0.0,
+        "kill_rate": 0.0,
+        "games": 10
+      },
+      "group06_ppo1": {
+        "win_rate": 0.0,
         "kill_rate": 0.0,
         "games": 10
       }
@@ -1254,17 +1494,17 @@
         "games": 10
       },
       "heuristic_apf": {
-        "win_rate": 1.0,
+        "win_rate": 0.6,
         "kill_rate": 0.0,
         "games": 10
       },
       "heuristic_circler": {
-        "win_rate": 0.3,
+        "win_rate": 0.4,
         "kill_rate": 0.0,
         "games": 10
       },
       "heuristic_evasive": {
-        "win_rate": 0.2,
+        "win_rate": 0.4,
         "kill_rate": 0.0,
         "games": 10
       },
@@ -1274,7 +1514,7 @@
         "games": 10
       },
       "heuristic_pn": {
-        "win_rate": 0.2,
+        "win_rate": 0.6,
         "kill_rate": 0.0,
         "games": 10
       },
@@ -1283,8 +1523,13 @@
         "kill_rate": 0.0,
         "games": 10
       },
-      "group04": {
-        "win_rate": 0.3,
+      "group04_league": {
+        "win_rate": 0.0,
+        "kill_rate": 0.0,
+        "games": 10
+      },
+      "group06_ppo1": {
+        "win_rate": 0.2,
         "kill_rate": 0.0,
         "games": 10
       }
@@ -1325,25 +1570,30 @@
         "kill_rate": 0.0,
         "games": 10
       },
-      "group04": {
-        "win_rate": 0.6,
+      "group04_league": {
+        "win_rate": 1.0,
+        "kill_rate": 0.0,
+        "games": 10
+      },
+      "group06_ppo1": {
+        "win_rate": 0.8,
         "kill_rate": 0.0,
         "games": 10
       }
     },
-    "group04": {
+    "group04_league": {
       "heuristic_aggressive": {
-        "win_rate": 0.9,
+        "win_rate": 1.0,
         "kill_rate": 0.0,
         "games": 10
       },
       "heuristic_apf": {
-        "win_rate": 0.9,
+        "win_rate": 1.0,
         "kill_rate": 0.0,
         "games": 10
       },
       "heuristic_circler": {
-        "win_rate": 0.7,
+        "win_rate": 1.0,
         "kill_rate": 0.0,
         "games": 10
       },
@@ -1358,17 +1608,69 @@
         "games": 10
       },
       "heuristic_pn": {
-        "win_rate": 0.9,
+        "win_rate": 1.0,
         "kill_rate": 0.0,
         "games": 10
       },
       "heuristic_survivor": {
-        "win_rate": 0.7,
+        "win_rate": 1.0,
         "kill_rate": 0.0,
         "games": 10
       },
       "arthur_louette": {
-        "win_rate": 0.4,
+        "win_rate": 0.0,
+        "kill_rate": 0.0,
+        "games": 10
+      },
+      "group06_ppo1": {
+        "win_rate": 0.0,
+        "kill_rate": 0.0,
+        "games": 10
+      }
+    },
+    "group06_ppo1": {
+      "heuristic_aggressive": {
+        "win_rate": 0.8,
+        "kill_rate": 0.0,
+        "games": 10
+      },
+      "heuristic_apf": {
+        "win_rate": 0.8,
+        "kill_rate": 0.0,
+        "games": 10
+      },
+      "heuristic_circler": {
+        "win_rate": 0.7,
+        "kill_rate": 0.0,
+        "games": 10
+      },
+      "heuristic_evasive": {
+        "win_rate": 1.0,
+        "kill_rate": 0.0,
+        "games": 10
+      },
+      "heuristic_hunter": {
+        "win_rate": 0.8,
+        "kill_rate": 0.0,
+        "games": 10
+      },
+      "heuristic_pn": {
+        "win_rate": 1.0,
+        "kill_rate": 0.0,
+        "games": 10
+      },
+      "heuristic_survivor": {
+        "win_rate": 0.8,
+        "kill_rate": 0.0,
+        "games": 10
+      },
+      "arthur_louette": {
+        "win_rate": 0.2,
+        "kill_rate": 0.0,
+        "games": 10
+      },
+      "group04_league": {
+        "win_rate": 1.0,
         "kill_rate": 0.0,
         "games": 10
       }
@@ -1381,8 +1683,8 @@
       "wins_a": 6,
       "wins_b": 4,
       "draws": 0,
-      "mean_reward_a": 2523.60009765625,
-      "mean_reward_b": 2260.699951171875
+      "mean_reward_a": 2523.699951171875,
+      "mean_reward_b": 2260.800048828125
     },
     {
       "player_a": "heuristic_aggressive",
@@ -1435,62 +1737,71 @@
       "wins_a": 0,
       "wins_b": 10,
       "draws": 0,
-      "mean_reward_a": -7951.39990234375,
-      "mean_reward_b": 22779.0
+      "mean_reward_a": -8381.7001953125,
+      "mean_reward_b": 23845.30078125
     },
     {
       "player_a": "heuristic_aggressive",
-      "player_b": "group04",
-      "wins_a": 1,
-      "wins_b": 9,
+      "player_b": "group04_league",
+      "wins_a": 0,
+      "wins_b": 10,
       "draws": 0,
-      "mean_reward_a": 1904.5999755859375,
-      "mean_reward_b": 3476.800048828125
+      "mean_reward_a": 1766.199951171875,
+      "mean_reward_b": 4040.10009765625
+    },
+    {
+      "player_a": "heuristic_aggressive",
+      "player_b": "group06_ppo1",
+      "wins_a": 2,
+      "wins_b": 8,
+      "draws": 0,
+      "mean_reward_a": 2030.5999755859375,
+      "mean_reward_b": 3591.0
     },
     {
       "player_a": "heuristic_apf",
       "player_b": "heuristic_circler",
-      "wins_a": 7,
-      "wins_b": 3,
+      "wins_a": 6,
+      "wins_b": 4,
       "draws": 0,
-      "mean_reward_a": 2518.89990234375,
-      "mean_reward_b": 2101.5
+      "mean_reward_a": 2525.39990234375,
+      "mean_reward_b": 2203.5
     },
     {
       "player_a": "heuristic_apf",
       "player_b": "heuristic_evasive",
-      "wins_a": 1,
-      "wins_b": 9,
+      "wins_a": 2,
+      "wins_b": 8,
       "draws": 0,
-      "mean_reward_a": 1894.300048828125,
-      "mean_reward_b": 2983.199951171875
+      "mean_reward_a": 1976.0999755859375,
+      "mean_reward_b": 2883.300048828125
     },
     {
       "player_a": "heuristic_apf",
       "player_b": "heuristic_hunter",
+      "wins_a": 7,
+      "wins_b": 3,
+      "draws": 0,
+      "mean_reward_a": 2606.5,
+      "mean_reward_b": 2039.5
+    },
+    {
+      "player_a": "heuristic_apf",
+      "player_b": "heuristic_pn",
+      "wins_a": 2,
+      "wins_b": 8,
+      "draws": 0,
+      "mean_reward_a": 1883.0,
+      "mean_reward_b": 2804.89990234375
+    },
+    {
+      "player_a": "heuristic_apf",
+      "player_b": "heuristic_survivor",
       "wins_a": 4,
       "wins_b": 6,
       "draws": 0,
-      "mean_reward_a": 2216.300048828125,
-      "mean_reward_b": 2500.5
-    },
-    {
-      "player_a": "heuristic_apf",
-      "player_b": "heuristic_pn",
-      "wins_a": 7,
-      "wins_b": 3,
-      "draws": 0,
-      "mean_reward_a": 2602.699951171875,
-      "mean_reward_b": 2035.9000244140625
-    },
-    {
-      "player_a": "heuristic_apf",
-      "player_b": "heuristic_survivor",
-      "wins_a": 0,
-      "wins_b": 10,
-      "draws": 0,
-      "mean_reward_a": 1643.9000244140625,
-      "mean_reward_b": 3156.10009765625
+      "mean_reward_a": 2249.300048828125,
+      "mean_reward_b": 2598.199951171875
     },
     {
       "player_a": "heuristic_apf",
@@ -1498,26 +1809,35 @@
       "wins_a": 0,
       "wins_b": 10,
       "draws": 0,
-      "mean_reward_a": -8026.39990234375,
-      "mean_reward_b": 23107.30078125
+      "mean_reward_a": -8048.10009765625,
+      "mean_reward_b": 23201.5
     },
     {
       "player_a": "heuristic_apf",
-      "player_b": "group04",
-      "wins_a": 1,
-      "wins_b": 9,
+      "player_b": "group04_league",
+      "wins_a": 0,
+      "wins_b": 10,
       "draws": 0,
-      "mean_reward_a": 1899.0,
-      "mean_reward_b": 3593.10009765625
+      "mean_reward_a": 1773.800048828125,
+      "mean_reward_b": 3948.300048828125
+    },
+    {
+      "player_a": "heuristic_apf",
+      "player_b": "group06_ppo1",
+      "wins_a": 2,
+      "wins_b": 8,
+      "draws": 0,
+      "mean_reward_a": 1961.9000244140625,
+      "mean_reward_b": 3368.199951171875
     },
     {
       "player_a": "heuristic_circler",
       "player_b": "heuristic_evasive",
-      "wins_a": 5,
-      "wins_b": 5,
+      "wins_a": 2,
+      "wins_b": 8,
       "draws": 0,
-      "mean_reward_a": 2374.39990234375,
-      "mean_reward_b": 2462.0
+      "mean_reward_a": 2002.699951171875,
+      "mean_reward_b": 2877.60009765625
     },
     {
       "player_a": "heuristic_circler",
@@ -1525,26 +1845,26 @@
       "wins_a": 7,
       "wins_b": 3,
       "draws": 0,
-      "mean_reward_a": 2596.89990234375,
-      "mean_reward_b": 2060.89990234375
+      "mean_reward_a": 2640.10009765625,
+      "mean_reward_b": 2056.39990234375
     },
     {
       "player_a": "heuristic_circler",
       "player_b": "heuristic_pn",
-      "wins_a": 5,
-      "wins_b": 5,
+      "wins_a": 6,
+      "wins_b": 4,
       "draws": 0,
-      "mean_reward_a": 2401.199951171875,
-      "mean_reward_b": 2385.60009765625
+      "mean_reward_a": 2504.60009765625,
+      "mean_reward_b": 2233.5
     },
     {
       "player_a": "heuristic_circler",
       "player_b": "heuristic_survivor",
-      "wins_a": 7,
-      "wins_b": 3,
+      "wins_a": 6,
+      "wins_b": 4,
       "draws": 0,
-      "mean_reward_a": 2654.39990234375,
-      "mean_reward_b": 2141.300048828125
+      "mean_reward_a": 2499.10009765625,
+      "mean_reward_b": 2290.300048828125
     },
     {
       "player_a": "heuristic_circler",
@@ -1552,26 +1872,35 @@
       "wins_a": 0,
       "wins_b": 10,
       "draws": 0,
-      "mean_reward_a": -7847.0,
-      "mean_reward_b": 22378.099609375
+      "mean_reward_a": -8260.0,
+      "mean_reward_b": 23421.5
     },
     {
       "player_a": "heuristic_circler",
-      "player_b": "group04",
+      "player_b": "group04_league",
+      "wins_a": 0,
+      "wins_b": 10,
+      "draws": 0,
+      "mean_reward_a": 1772.4000244140625,
+      "mean_reward_b": 3909.39990234375
+    },
+    {
+      "player_a": "heuristic_circler",
+      "player_b": "group06_ppo1",
       "wins_a": 3,
       "wins_b": 7,
       "draws": 0,
-      "mean_reward_a": 2107.800048828125,
-      "mean_reward_b": 3247.199951171875
+      "mean_reward_a": 2075.0,
+      "mean_reward_b": 3221.199951171875
     },
     {
       "player_a": "heuristic_evasive",
       "player_b": "heuristic_hunter",
-      "wins_a": 8,
-      "wins_b": 2,
+      "wins_a": 6,
+      "wins_b": 4,
       "draws": 0,
-      "mean_reward_a": 2867.199951171875,
-      "mean_reward_b": 1996.0999755859375
+      "mean_reward_a": 2559.199951171875,
+      "mean_reward_b": 2235.60009765625
     },
     {
       "player_a": "heuristic_evasive",
@@ -1579,17 +1908,17 @@
       "wins_a": 9,
       "wins_b": 1,
       "draws": 0,
-      "mean_reward_a": 3051.699951171875,
-      "mean_reward_b": 1866.800048828125
+      "mean_reward_a": 3089.800048828125,
+      "mean_reward_b": 1998.800048828125
     },
     {
       "player_a": "heuristic_evasive",
       "player_b": "heuristic_survivor",
-      "wins_a": 8,
-      "wins_b": 2,
+      "wins_a": 6,
+      "wins_b": 4,
       "draws": 0,
-      "mean_reward_a": 2888.60009765625,
-      "mean_reward_b": 2071.39990234375
+      "mean_reward_a": 2662.89990234375,
+      "mean_reward_b": 2345.0
     },
     {
       "player_a": "heuristic_evasive",
@@ -1597,62 +1926,80 @@
       "wins_a": 0,
       "wins_b": 10,
       "draws": 0,
-      "mean_reward_a": -8125.39990234375,
-      "mean_reward_b": 23441.900390625
+      "mean_reward_a": -8782.7001953125,
+      "mean_reward_b": 24539.099609375
     },
     {
       "player_a": "heuristic_evasive",
-      "player_b": "group04",
+      "player_b": "group04_league",
       "wins_a": 0,
       "wins_b": 10,
       "draws": 0,
-      "mean_reward_a": 1964.300048828125,
-      "mean_reward_b": 3903.199951171875
+      "mean_reward_a": 1941.4000244140625,
+      "mean_reward_b": 4264.2998046875
+    },
+    {
+      "player_a": "heuristic_evasive",
+      "player_b": "group06_ppo1",
+      "wins_a": 0,
+      "wins_b": 10,
+      "draws": 0,
+      "mean_reward_a": 2003.4000244140625,
+      "mean_reward_b": 4146.7001953125
     },
     {
       "player_a": "heuristic_hunter",
       "player_b": "heuristic_pn",
-      "wins_a": 5,
-      "wins_b": 5,
-      "draws": 0,
-      "mean_reward_a": 2368.10009765625,
-      "mean_reward_b": 2358.60009765625
-    },
-    {
-      "player_a": "heuristic_hunter",
-      "player_b": "heuristic_survivor",
-      "wins_a": 5,
-      "wins_b": 5,
-      "draws": 0,
-      "mean_reward_a": 2430.5,
-      "mean_reward_b": 2440.5
-    },
-    {
-      "player_a": "heuristic_hunter",
-      "player_b": "arthur_louette",
-      "wins_a": 0,
-      "wins_b": 10,
-      "draws": 0,
-      "mean_reward_a": -8773.0,
-      "mean_reward_b": 24612.5
-    },
-    {
-      "player_a": "heuristic_hunter",
-      "player_b": "group04",
-      "wins_a": 0,
-      "wins_b": 10,
-      "draws": 0,
-      "mean_reward_a": 1852.0999755859375,
-      "mean_reward_b": 3933.39990234375
-    },
-    {
-      "player_a": "heuristic_pn",
-      "player_b": "heuristic_survivor",
       "wins_a": 8,
       "wins_b": 2,
       "draws": 0,
-      "mean_reward_a": 2904.699951171875,
-      "mean_reward_b": 2106.199951171875
+      "mean_reward_a": 2831.800048828125,
+      "mean_reward_b": 2001.199951171875
+    },
+    {
+      "player_a": "heuristic_hunter",
+      "player_b": "heuristic_survivor",
+      "wins_a": 5,
+      "wins_b": 5,
+      "draws": 0,
+      "mean_reward_a": 2409.60009765625,
+      "mean_reward_b": 2450.800048828125
+    },
+    {
+      "player_a": "heuristic_hunter",
+      "player_b": "arthur_louette",
+      "wins_a": 0,
+      "wins_b": 10,
+      "draws": 0,
+      "mean_reward_a": -8366.099609375,
+      "mean_reward_b": 23987.0
+    },
+    {
+      "player_a": "heuristic_hunter",
+      "player_b": "group04_league",
+      "wins_a": 0,
+      "wins_b": 10,
+      "draws": 0,
+      "mean_reward_a": 1782.199951171875,
+      "mean_reward_b": 3966.89990234375
+    },
+    {
+      "player_a": "heuristic_hunter",
+      "player_b": "group06_ppo1",
+      "wins_a": 2,
+      "wins_b": 8,
+      "draws": 0,
+      "mean_reward_a": 1954.699951171875,
+      "mean_reward_b": 3526.0
+    },
+    {
+      "player_a": "heuristic_pn",
+      "player_b": "heuristic_survivor",
+      "wins_a": 4,
+      "wins_b": 6,
+      "draws": 0,
+      "mean_reward_a": 2244.0,
+      "mean_reward_b": 2535.39990234375
     },
     {
       "player_a": "heuristic_pn",
@@ -1660,17 +2007,26 @@
       "wins_a": 0,
       "wins_b": 10,
       "draws": 0,
-      "mean_reward_a": -7600.89990234375,
-      "mean_reward_b": 22535.099609375
+      "mean_reward_a": -7824.39990234375,
+      "mean_reward_b": 22608.099609375
     },
     {
       "player_a": "heuristic_pn",
-      "player_b": "group04",
-      "wins_a": 1,
-      "wins_b": 9,
+      "player_b": "group04_league",
+      "wins_a": 0,
+      "wins_b": 10,
       "draws": 0,
-      "mean_reward_a": 1977.800048828125,
-      "mean_reward_b": 3683.300048828125
+      "mean_reward_a": 1781.0999755859375,
+      "mean_reward_b": 4076.5
+    },
+    {
+      "player_a": "heuristic_pn",
+      "player_b": "group06_ppo1",
+      "wins_a": 0,
+      "wins_b": 10,
+      "draws": 0,
+      "mean_reward_a": 1904.800048828125,
+      "mean_reward_b": 3954.10009765625
     },
     {
       "player_a": "heuristic_survivor",
@@ -1678,26 +2034,53 @@
       "wins_a": 0,
       "wins_b": 10,
       "draws": 0,
-      "mean_reward_a": -8056.2998046875,
-      "mean_reward_b": 23345.099609375
+      "mean_reward_a": -8631.900390625,
+      "mean_reward_b": 24595.19921875
     },
     {
       "player_a": "heuristic_survivor",
-      "player_b": "group04",
-      "wins_a": 3,
-      "wins_b": 7,
+      "player_b": "group04_league",
+      "wins_a": 0,
+      "wins_b": 10,
       "draws": 0,
-      "mean_reward_a": 2198.5,
-      "mean_reward_b": 3319.699951171875
+      "mean_reward_a": 1844.300048828125,
+      "mean_reward_b": 3854.699951171875
+    },
+    {
+      "player_a": "heuristic_survivor",
+      "player_b": "group06_ppo1",
+      "wins_a": 2,
+      "wins_b": 8,
+      "draws": 0,
+      "mean_reward_a": 2009.300048828125,
+      "mean_reward_b": 3196.89990234375
     },
     {
       "player_a": "arthur_louette",
-      "player_b": "group04",
-      "wins_a": 6,
-      "wins_b": 4,
+      "player_b": "group04_league",
+      "wins_a": 10,
+      "wins_b": 0,
       "draws": 0,
-      "mean_reward_a": 5356.5,
-      "mean_reward_b": -74.4000015258789
+      "mean_reward_a": 14373.7998046875,
+      "mean_reward_b": 277.5
+    },
+    {
+      "player_a": "arthur_louette",
+      "player_b": "group06_ppo1",
+      "wins_a": 8,
+      "wins_b": 2,
+      "draws": 0,
+      "mean_reward_a": 5430.7998046875,
+      "mean_reward_b": 3015.300048828125
+    },
+    {
+      "player_a": "group04_league",
+      "player_b": "group06_ppo1",
+      "wins_a": 0,
+      "wins_b": 10,
+      "draws": 0,
+      "mean_reward_a": 4151.2001953125,
+      "mean_reward_b": 15256.2001953125
     }
   ],
   "elo_method": "bradley_terry_map_sigma300"
